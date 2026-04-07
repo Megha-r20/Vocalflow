@@ -1,53 +1,94 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Mic, LayoutDashboard, History, Settings, User, Play } from 'lucide-react';
-import BalancePanel from './BalancePanel';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Settings, User, LayoutDashboard, History, FileText, Mic, Beaker } from "lucide-react";
+import Badge from "./UI/Badge";
 
 export default function Navbar() {
   return (
-    <nav className="h-16 bg-[#12121A] border-b border-[#B03052]/15 flex items-center justify-between px-6 sticky top-0 z-50 backdrop-blur-md bg-opacity-80">
+    <nav className="h-16 bg-[#12121A]/80 backdrop-blur-xl border-b border-[rgba(176,48,82,0.15)] px-6 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center gap-8">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-lg flex items-center justify-center shadow-lg shadow-[rgba(176,48,82,0.2)] group-hover:scale-105 transition-transform">
-            <Mic className="w-4 h-4 text-white" />
+        <Link to="/app" className="flex items-center gap-2 group">
+          <div className="w-8 h-8 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-[rgba(176,48,82,0.2)]">
+            <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor" opacity="0.5"/>
+              <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
-          <span className="text-[#F5F5F7] font-bold text-xl tracking-tight">VocalFlow</span>
+          <span className="font-semibold text-[#F5F5F7]">VocalFlow</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          <NavLink to="/dashboard" icon={<LayoutDashboard className="w-4 h-4" />} label="Dashboard" />
-          <NavLink to="/app" icon={<Play className="w-4 h-4" />} label="Builder" />
-          <NavLink to="/history" icon={<History className="w-4 h-4" />} label="History" />
-          <NavLink to="/playground" icon={<div className="w-4 h-4 flex items-center justify-center text-[10px] font-bold border rounded">AI</div>} label="Playground" />
+        <div className="flex items-center gap-1">
+          <Link
+            to="/dashboard"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200 flex items-center gap-2"
+          >
+            <LayoutDashboard className="w-4 h-4" />
+            Dashboard
+          </Link>
+          <Link
+            to="/app"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200"
+          >
+            Workflows
+          </Link>
+          <Link
+            to="/templates"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200 flex items-center gap-2"
+          >
+            <FileText className="w-4 h-4" />
+            Templates
+          </Link>
+          <Link
+            to="/history"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200 flex items-center gap-2"
+          >
+            <History className="w-4 h-4" />
+            History
+          </Link>
+          <Link
+            to="/recorder"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200 flex items-center gap-2"
+          >
+            <Mic className="w-4 h-4" />
+            Recorder
+          </Link>
+          <Link
+            to="/playground"
+            className="px-3 py-1.5 rounded-lg text-sm text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] transition-all duration-200 flex items-center gap-2"
+          >
+            <Beaker className="w-4 h-4" />
+            Playground
+          </Link>
         </div>
       </div>
 
-      <div className="flex items-center gap-6">
-        <div className="hidden lg:block">
-          <BalancePanel />
+      <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <Badge className="bg-[#1A1A24] border border-[rgba(176,48,82,0.3)] text-[#F5F5F7] hover:bg-[#1A1A24] px-3 py-1 flex items-center">
+            <span className="text-xs opacity-60 mr-1.5">Deepgram</span>
+            <span className="font-semibold">$24.50</span>
+          </Badge>
+          <Badge className="bg-[#1A1A24] border border-[rgba(176,48,82,0.3)] text-[#F5F5F7] hover:bg-[#1A1A24] px-3 py-1 flex items-center">
+            <span className="text-xs opacity-60 mr-1.5">Grok</span>
+            <span className="font-semibold">$18.30</span>
+          </Badge>
         </div>
-        
-        <div className="flex items-center gap-3 pl-6 border-l border-[rgba(176,48,82,0.15)]">
-          <Link to="/settings" className="p-2 text-[#9CA3AF] hover:text-[#F5F5F7] hover:bg-[#1A1A24] rounded-lg transition-colors">
-            <Settings className="w-5 h-5" />
-          </Link>
-          <Link to="/profile" className="w-8 h-8 rounded-full bg-gradient-to-br from-[#B03052] to-[#D76C82] flex items-center justify-center text-white font-medium text-xs shadow-lg shadow-[rgba(176,48,82,0.2)] hover:scale-105 transition-transform">
-            <User className="w-4 h-4" />
-          </Link>
-        </div>
+
+        <Link
+          to="/settings"
+          className="w-9 h-9 rounded-lg bg-[#1A1A24] hover:bg-[#B03052]/20 border border-[rgba(176,48,82,0.2)] hover:border-[rgba(176,48,82,0.4)] flex items-center justify-center transition-all duration-200 group"
+        >
+          <Settings className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#B03052]" />
+        </Link>
+
+        <Link
+          to="/profile"
+          className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#B03052] to-[#D76C82] flex items-center justify-center transition-transform hover:scale-105 shadow-lg shadow-[rgba(176,48,82,0.2)]"
+        >
+          <User className="w-4 h-4 text-white" />
+        </Link>
       </div>
     </nav>
-  );
-}
-
-function NavLink({ to, icon, label }) {
-  return (
-    <Link 
-      to={to} 
-      className="flex items-center gap-2 text-sm font-medium text-[#9CA3AF] hover:text-[#F5F5F7] transition-colors"
-    >
-      {icon}
-      <span>{label}</span>
-    </Link>
   );
 }
