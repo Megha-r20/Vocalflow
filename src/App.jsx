@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import PublicLayout from './components/layout/PublicLayout';
-import AppLayout from './components/layout/AppLayout';
+import PublicLayout from './components/Layout/PublicLayout';
+import AppLayout from './components/Layout/AppLayout';
 import Landing from './pages/Landing';
 import { Login, Signup } from './pages/Auth';
 import Dashboard from './pages/Dashboard';
