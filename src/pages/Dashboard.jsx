@@ -1,140 +1,118 @@
-import React from 'react';
-import Card from '../components/ui/Card';
-import Badge from '../components/ui/Badge';
-import Button from '../components/ui/Button';
-import { 
-  Plus, 
-  Workflow, 
-  Clock, 
-  Activity, 
-  ArrowUpRight,
-  MoreVertical,
-  Play
-} from 'lucide-react';
-import './Dashboard.css';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Card from "../components/UI/Card";
+import Button from "../components/UI/Button";
+import { ArrowUpRight, Plus, TrendingUp, Clock, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const Dashboard = () => {
-  const stats = [
-    { label: 'Active Workflows', value: '12', icon: Workflow, trend: '+2 this week' },
-    { label: 'API Usage', value: '$124.50', icon: Activity, trend: '-10% vs last month' },
-    { label: 'Total Runs', value: '1,420', icon: Play, trend: '85% success rate' },
-    { label: 'Avg. Latency', value: '420ms', icon: Clock, trend: 'Top 5% speed' }
-  ];
-
-  const recentWorkflows = [
-    { name: 'Customer Support Bot', status: 'Active', lastRun: '2 mins ago', runs: 420 },
-    { name: 'Podcast Transcriber', status: 'Active', lastRun: '1 hour ago', runs: 85 },
-    { name: 'Voice Notes to Notion', status: 'Idle', lastRun: 'Yesterday', runs: 12 },
-    { name: 'Legal Summary Pro', status: 'Active', lastRun: '3 hours ago', runs: 156 },
-  ];
-
+export default function Dashboard() {
   return (
-    <div className="dashboard-page">
-      <div className="dashboard-header">
-        <div>
-          <h1 className="dash-title">Good afternoon, Alex</h1>
-          <p className="dash-subtitle">Here's what's happening with your workflows today.</p>
-        </div>
-        <Button variant="primary" icon={Plus}>Create Workflow</Button>
-      </div>
+    <div className="min-h-screen bg-[#0B0B10]">
+      <Navbar />
 
-      <div className="stats-grid">
-        {stats.map((stat, i) => (
-          <div key={i} className="stat-card glass">
-            <div className="stat-icon-wrapper">
-              <stat.icon size={20} />
-            </div>
-            <div className="stat-content">
-              <p className="stat-label">{stat.label}</p>
-              <h3 className="stat-value">{stat.value}</h3>
-              <p className="stat-trend">{stat.trend}</p>
-            </div>
+      <div className="max-w-7xl mx-auto p-8 space-y-8">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-[#F5F5F7] mb-2">Dashboard</h1>
+            <p className="text-[#9CA3AF]">Welcome back! Here's your workflow overview</p>
           </div>
-        ))}
-      </div>
+          <Link to="/app">
+            <Button className="bg-[#B03052] hover:bg-[#8f2642] text-white rounded-lg transition-all duration-200 flex items-center gap-2">
+              <Plus className="w-4 h-4" />
+              Create Workflow
+            </Button>
+          </Link>
+        </div>
 
-      <div className="dashboard-grid">
-        <div className="main-col">
-          <Card title="Usage Summary" subtitle="Total processing time over the last 30 days.">
-            <div className="chart-placeholder">
-              <div className="bar-grid">
-                {[40, 70, 45, 90, 65, 80, 50, 85, 40, 60, 75, 55].map((h, i) => (
-                  <div key={i} className="bar-wrapper">
-                    <div className="bar" style={{ height: `${h}%` }}></div>
-                  </div>
-                ))}
+        {/* Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl hover:border-[rgba(176,48,82,0.4)] transition-all duration-300">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-12 h-12 bg-[#B03052]/20 rounded-xl flex items-center justify-center">
+                <Zap className="w-6 h-6 text-[#B03052]" />
               </div>
-              <div className="chart-footer">
-                <span>Mar 01</span>
-                <span>Mar 15</span>
-                <span>Mar 30</span>
-              </div>
+              <span className="text-sm text-[#9CA3AF]">+12% this week</span>
             </div>
+            <div className="text-3xl font-bold text-[#F5F5F7] mb-1">24</div>
+            <div className="text-sm text-[#9CA3AF]">Total Workflows</div>
           </Card>
 
-          <div className="recent-workflows">
-            <div className="section-title-group">
-              <h3>Recent Workflows</h3>
-              <Button variant="ghost" size="sm">View All</Button>
+          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl hover:border-[rgba(176,48,82,0.4)] transition-all duration-300">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-12 h-12 bg-[#D76C82]/20 rounded-xl flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-[#D76C82]" />
+              </div>
+              <span className="text-sm text-[#9CA3AF]">+8% this week</span>
             </div>
-            <div className="workflow-list">
-              {recentWorkflows.map((flow, i) => (
-                <div key={i} className="workflow-row glass">
-                  <div className="workflow-info">
-                    <div className="workflow-icon"><Workflow size={18} /></div>
-                    <div>
-                      <p className="workflow-name">{flow.name}</p>
-                      <p className="workflow-meta">Last run: {flow.lastRun}</p>
-                    </div>
+            <div className="text-3xl font-bold text-[#F5F5F7] mb-1">1,247</div>
+            <div className="text-sm text-[#9CA3AF]">API Calls Today</div>
+          </Card>
+
+          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl hover:border-[rgba(176,48,82,0.4)] transition-all duration-300">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-12 h-12 bg-[#B03052]/20 rounded-xl flex items-center justify-center">
+                <Clock className="w-6 h-6 text-[#B03052]" />
+              </div>
+              <span className="text-sm text-[#9CA3AF]">2 mins ago</span>
+            </div>
+            <div className="text-3xl font-bold text-[#F5F5F7] mb-1">3:42 PM</div>
+            <div className="text-sm text-[#9CA3AF]">Last Workflow Run</div>
+          </Card>
+        </div>
+
+        {/* Usage Chart Placeholder */}
+        <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl">
+          <h2 className="text-xl font-semibold text-[#F5F5F7] mb-6">API Usage</h2>
+          <div className="h-64 bg-[#1A1A24] rounded-xl flex items-center justify-center border border-[rgba(176,48,82,0.1)]">
+            <div className="text-center">
+              <TrendingUp className="w-12 h-12 text-[#9CA3AF] mx-auto mb-3 opacity-50" />
+              <p className="text-[#9CA3AF]">Usage analytics coming soon</p>
+            </div>
+          </div>
+        </Card>
+
+        {/* Recent Activity */}
+        <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold text-[#F5F5F7]">Recent Workflows</h2>
+            <Link to="/history" className="text-sm text-[#B03052] hover:text-[#D76C82] flex items-center gap-1 transition-colors">
+              View All
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <div className="space-y-3">
+            {[
+              { name: "Voice to Summary", status: "Completed", time: "2 mins ago", runs: 156 },
+              { name: "Transcription Pipeline", status: "Active", time: "15 mins ago", runs: 89 },
+              { name: "AI Voice Analysis", status: "Completed", time: "1 hour ago", runs: 234 },
+              { name: "Email from Voice", status: "Draft", time: "3 hours ago", runs: 45 }
+            ].map((workflow, i) => (
+              <div key={i} className="flex items-center justify-between p-4 bg-[#1A1A24] rounded-xl hover:bg-[#1A1A24]/80 transition-colors cursor-pointer group">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-lg flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-white" />
                   </div>
-                  <div className="workflow-stats">
-                    <p>{flow.runs} runs</p>
-                    <Badge variant={flow.status === 'Active' ? 'success' : 'default'}>
-                      {flow.status}
-                    </Badge>
+                  <div>
+                    <div className="font-medium text-[#F5F5F7] group-hover:text-[#B03052] transition-colors">{workflow.name}</div>
+                    <div className="text-sm text-[#9CA3AF]">{workflow.time} • {workflow.runs} runs</div>
                   </div>
-                  <button className="icon-btn"><MoreVertical size={18} /></button>
                 </div>
-              ))}
-            </div>
+                <div className="flex items-center gap-3">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    workflow.status === "Completed" ? "bg-green-500/20 text-green-400" :
+                    workflow.status === "Active" ? "bg-blue-500/20 text-blue-400" :
+                    "bg-[#9CA3AF]/20 text-[#9CA3AF]"
+                  }`}>
+                    {workflow.status}
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 text-[#9CA3AF] group-hover:text-[#B03052] transition-colors" />
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-
-        <div className="side-col">
-          <Card title="Quick Actions">
-            <div className="quick-actions-list">
-              <button className="action-item">
-                <div className="action-icon"><Mic size={18} /></div>
-                <span>Start Recording</span>
-              </button>
-              <button className="action-item">
-                <div className="action-icon"><Layers size={18} /></div>
-                <span>Browse Templates</span>
-              </button>
-              <button className="action-item">
-                <div className="action-icon"><Activity size={18} /></div>
-                <span>View API Logs</span>
-              </button>
-            </div>
-          </Card>
-
-          <Card title="API Credits" className="credits-card">
-            <div className="credits-usage">
-              <div className="usage-header">
-                <span>$12.50 left</span>
-                <span>80% used</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-fill" style={{ width: '80%' }}></div>
-              </div>
-              <p className="usage-desc">Your balance is running low. Auto-recharge is enabled.</p>
-              <Button variant="secondary" size="sm" style={{ width: '100%' }}>Top Up Balance</Button>
-            </div>
-          </Card>
-        </div>
+        </Card>
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}
