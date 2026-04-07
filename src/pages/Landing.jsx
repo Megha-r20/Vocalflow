@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Mic, Zap, ArrowRight, CheckCircle2, Sparkles, Brain, FileOutput, Code2, Headphones, Users, Building2, Rocket, Workflow, Gauge, Plug, Upload, Play, FileText, User } from "lucide-react";
 import Button from "../components/UI/Button";
 import Card from "../components/UI/Card";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Layout/Footer";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -16,30 +18,7 @@ export default function Landing() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#B03052] rounded-full blur-[200px] opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between px-8 py-6 border-b border-[rgba(176,48,82,0.15)] backdrop-blur-sm bg-[#0B0B10]/80">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center shadow-lg shadow-[rgba(176,48,82,0.3)]">
-            <Mic className="w-5 h-5 text-white" />
-          </div>
-          <span className="font-semibold text-xl">VocalFlow Clone</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <Button
-            onClick={() => navigate('/login')}
-            variant="ghost"
-            className="text-[#F5F5F7] hover:bg-[#12121A] px-4 py-2 rounded-xl transition-all duration-200"
-          >
-            Sign In
-          </Button>
-          <Button
-            onClick={() => navigate('/app')}
-            className="bg-[#B03052] hover:bg-[#8f2642] text-white px-6 py-2 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[rgba(176,48,82,0.4)] hover:scale-105"
-          >
-            Get Started
-          </Button>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 text-center">
@@ -62,7 +41,7 @@ export default function Landing() {
           <span className="text-[#F5F5F7]/80">Just drag, drop, and ship.</span>
         </p>
 
-        <div className="flex gap-4 justify-center mb-20">
+        <div className="flex flex-wrap items-center gap-4 justify-center mb-20">
           <Button
             onClick={() => navigate('/app')}
             size="lg"
@@ -526,22 +505,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-[rgba(176,48,82,0.15)] mt-24">
-        <div className="max-w-7xl mx-auto px-8 py-12">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-lg flex items-center justify-center">
-                <Mic className="w-4 h-4 text-white" />
-              </div>
-              <span className="font-semibold">VocalFlow Clone</span>
-            </div>
-            <div className="text-sm text-[#9CA3AF]">
-              © 2026 VocalFlow Clone. All rights reserved.
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
