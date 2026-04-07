@@ -1,3 +1,8 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
 :root {
   /* Colors */
   --bg-color: #0B0B10;
