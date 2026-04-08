@@ -10,12 +10,11 @@ export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-[#0B0B10] text-[#F5F5F7] overflow-hidden">
-      {/* Animated Background */}
+    <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden">
+      {/* Animated Background - Extremely Subtle */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-[#B03052] rounded-full blur-[150px] opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-[600px] h-[600px] bg-[#D76C82] rounded-full blur-[180px] opacity-15 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#B03052] rounded-full blur-[200px] opacity-10 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-[#B03052] rounded-full blur-[200px] opacity-5 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-[600px] h-[600px] bg-[#D76C82] rounded-full blur-[250px] opacity-5 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <Navbar />
@@ -80,41 +79,38 @@ export default function Landing() {
 
       {/* How It Works Section */}
       <section className="relative z-10 max-w-7xl mx-auto px-8 py-32">
-        <div className="text-center mb-24 relative">
-          {/* Main Radial Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#B03052]/10 blur-[150px] pointer-events-none"></div>
+        <div className="text-center mb-20 relative">
+          {/* Subtle Maroon Background Glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#B03052]/5 blur-[120px] pointer-events-none"></div>
           
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-6 tracking-tight text-white">
+          <h2 className="text-5xl font-extrabold mb-6 tracking-tight text-[#F5F5F7]">
             How It <span className="text-[#B03052]">Works</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#9CA3AF] max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-[#9CA3AF] max-w-2xl mx-auto font-medium opacity-70">
             Three simple steps to build powerful AI voice workflows
           </p>
         </div>
 
         <div className="relative">
-          {/* Connecting Line (Faint horizontal line behind cards) */}
-          <div className="hidden md:block absolute top-[160px] left-[10%] right-[10%] h-[1px] bg-[#B03052]/20 z-0"></div>
+          {/* Faint Connecting Line */}
+          <div className="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-[1px] bg-[#B03052]/10 z-0"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
             {/* Step 1 */}
             <div className="group relative">
-              {/* External Glow */}
-              <div className="absolute -inset-1 bg-[#B03052]/40 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <Card className="relative h-full bg-[#1A0B11] border border-[#B03052]/20 p-12 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-2 shadow-2xl overflow-visible">
+              <Card className="relative h-full bg-[#12121A] border border-[#B03052]/30 p-10 rounded-2xl transition-all duration-500 hover:border-[#B03052] shadow-[0_0_25px_rgba(176,48,82,0.1)] hover:shadow-[0_0_40px_rgba(176,48,82,0.2)] overflow-visible">
                 {/* Step Badge */}
-                <div className="absolute -top-2 -right-2 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_20px_rgba(176,48,82,0.6)] z-20">
+                <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-xs shadow-[0_0_15px_rgba(176,48,82,0.5)]">
                   1
                 </div>
 
-                <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 bg-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_30px_rgba(176,48,82,0.4)] transition-all duration-500 mx-auto">
-                    <Mic className="w-12 h-12 text-white" />
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-[#B03052] rounded-2xl flex items-center justify-center mb-8 shadow-[0_4px_20px_rgba(176,48,82,0.3)] mx-auto">
+                    <Mic className="w-10 h-10 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-5 text-white">Voice Input</h3>
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium px-2">
+                  <h3 className="text-xl font-bold mb-4 text-[#F5F5F7]">Voice Input</h3>
+                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium">
                     Connect your audio source or microphone. Support for real-time streaming and file uploads.
                   </p>
                 </div>
@@ -123,21 +119,19 @@ export default function Landing() {
 
             {/* Step 2 */}
             <div className="group relative">
-              <div className="absolute -inset-1 bg-[#B03052]/40 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <Card className="relative h-full bg-[#1A0B11] border border-[#B03052]/20 p-12 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-2 shadow-2xl overflow-visible">
+              <Card className="relative h-full bg-[#12121A] border border-[#B03052]/30 p-10 rounded-2xl transition-all duration-500 hover:border-[#B03052] shadow-[0_0_25px_rgba(176,48,82,0.1)] hover:shadow-[0_0_40px_rgba(176,48,82,0.2)] overflow-visible">
                 {/* Step Badge */}
-                <div className="absolute -top-2 -right-2 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_20px_rgba(176,48,82,0.6)] z-20">
+                <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-xs shadow-[0_0_15px_rgba(176,48,82,0.5)]">
                   2
                 </div>
 
-                <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 bg-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_30px_rgba(176,48,82,0.4)] transition-all duration-500 mx-auto">
-                    <Brain className="w-12 h-12 text-white" />
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-[#B03052] rounded-2xl flex items-center justify-center mb-8 shadow-[0_4px_20px_rgba(176,48,82,0.3)] mx-auto">
+                    <Brain className="w-10 h-10 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-5 text-white">AI Processing</h3>
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium px-2">
+                  <h3 className="text-xl font-bold mb-4 text-[#F5F5F7]">AI Processing</h3>
+                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium">
                     Apply AI models with drag-and-drop nodes. Transcribe, analyze, enhance, and transform.
                   </p>
                 </div>
@@ -146,21 +140,19 @@ export default function Landing() {
 
             {/* Step 3 */}
             <div className="group relative">
-              <div className="absolute -inset-1 bg-[#B03052]/40 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <Card className="relative h-full bg-[#1A0B11] border border-[#B03052]/20 p-12 rounded-[2.5rem] transition-all duration-500 group-hover:-translate-y-2 shadow-2xl overflow-visible">
+              <Card className="relative h-full bg-[#12121A] border border-[#B03052]/30 p-10 rounded-2xl transition-all duration-500 hover:border-[#B03052] shadow-[0_0_25px_rgba(176,48,82,0.1)] hover:shadow-[0_0_40px_rgba(176,48,82,0.2)] overflow-visible">
                 {/* Step Badge */}
-                <div className="absolute -top-2 -right-2 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_20px_rgba(176,48,82,0.6)] z-20">
+                <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-xs shadow-[0_0_15px_rgba(176,48,82,0.5)]">
                   3
                 </div>
 
-                <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 bg-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_30px_rgba(176,48,82,0.4)] transition-all duration-500 mx-auto">
-                    <FileOutput className="w-12 h-12 text-white" />
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-[#B03052] rounded-2xl flex items-center justify-center mb-8 shadow-[0_4px_20px_rgba(176,48,82,0.3)] mx-auto">
+                    <FileOutput className="w-10 h-10 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-5 text-white">Smart Output</h3>
-                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium px-2">
+                  <h3 className="text-xl font-bold mb-4 text-[#F5F5F7]">Smart Output</h3>
+                  <p className="text-[#9CA3AF] text-sm leading-relaxed font-medium">
                     Export results in any format. Deploy to production with one click. Scale instantly.
                   </p>
                 </div>
