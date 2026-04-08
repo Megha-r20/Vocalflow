@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Button from '../components/ui/Button';
-import Input from '../components/ui/Input';
-import Card from '../components/ui/Card';
+import Button from '../components/common/Button';
+import Input from '../components/common/Input';
+import Card from '../components/common/Card';
 import { Mail, Lock, User as UserIcon, Github } from 'lucide-react';
 
 import './Auth.css';
