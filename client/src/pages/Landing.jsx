@@ -69,19 +69,63 @@ export default function Landing() {
       </section>
 
         {/* Product Preview */}
-        <div className="relative max-w-6xl mx-auto">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#B03052]/30 to-transparent rounded-3xl blur-3xl"></div>
-          <div className="relative bg-[#12121A]/50 backdrop-blur-xl border border-[rgba(176,48,82,0.2)] rounded-3xl p-8 shadow-2xl overflow-hidden hover:border-[rgba(176,48,82,0.4)] transition-all duration-500">
-            <div className="aspect-video bg-gradient-to-br from-[#1A1A24] to-[#12121A] rounded-2xl flex items-center justify-center relative overflow-hidden">
-              {/* Enhanced Blurred Workflow Preview */}
-              <div className="absolute inset-0 flex items-center justify-center gap-12 blur-md opacity-50">
-                <div className="w-48 h-48 bg-gradient-to-br from-[#B03052]/40 to-[#D76C82]/20 rounded-3xl animate-pulse"></div>
-                <div className="w-48 h-48 bg-gradient-to-br from-[#D76C82]/40 to-[#B03052]/20 rounded-3xl animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                <div className="w-48 h-48 bg-gradient-to-br from-[#B03052]/40 to-[#D76C82]/20 rounded-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="relative max-w-5xl mx-auto px-4">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#B03052]/20 to-transparent rounded-[2.5rem] blur-3xl"></div>
+          
+          <div className="relative bg-[#0B0B13]/80 backdrop-blur-2xl border border-[rgba(176,48,82,0.15)] rounded-[2.5rem] p-4 p-md-8 shadow-2xl overflow-hidden group hover:border-[rgba(176,48,82,0.3)] transition-all duration-500">
+            {/* Inner Dashboard-like Frame */}
+            <div className="aspect-[16/9] md:aspect-[21/9] bg-[#050508] rounded-[1.8rem] border border-[rgba(255,255,255,0.03)] flex items-center justify-center relative overflow-hidden">
+              
+              {/* Grid Background Overlay */}
+              <div className="absolute inset-0 landing-grid-bg opacity-30 pointer-events-none"></div>
+
+              {/* Animated Mock Nodes */}
+              <div className="relative z-10 flex items-center justify-center gap-4 md:gap-16 w-full px-4">
+                
+                {/* Node 1: Audio */}
+                <div className="flex flex-col items-center gap-4 animate-float-slow">
+                  <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#1A1A24] to-[#12121A] border border-[rgba(176,48,82,0.3)] rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300">
+                    <Mic className="w-8 h-8 md:w-12 md:h-12 text-[#B03052]" />
+                  </div>
+                  <span className="text-xs md:text-sm text-[#9CA3AF] font-bold tracking-widest uppercase">Input</span>
+                </div>
+
+                {/* Connector Line 1 */}
+                <div className="flex-1 max-w-[100px] h-[2px] bg-gradient-to-r from-[#B03052] to-[#D76C82] relative overflow-hidden hidden sm:block">
+                  <div className="absolute inset-0 bg-white opacity-20 animate-shimmer-flow"></div>
+                </div>
+
+                {/* Node 2: AI Intelligence */}
+                <div className="flex flex-col items-center gap-4 animate-float-slow" style={{ animationDelay: '1s' }}>
+                  <div className="w-20 h-20 md:w-32 md:h-32 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center shadow-[0_0_40px_rgba(176,48,82,0.3)] group-hover:shadow-[0_0_60px_rgba(176,48,82,0.5)] transition-all duration-500">
+                    <Brain className="w-10 h-10 md:w-16 md:h-16 text-white" />
+                  </div>
+                  <span className="text-xs md:text-sm text-white font-bold tracking-widest uppercase">AI Agent</span>
+                </div>
+
+                {/* Connector Line 2 */}
+                <div className="flex-1 max-w-[100px] h-[2px] bg-gradient-to-r from-[#D76C82] to-[#B03052] relative overflow-hidden hidden sm:block">
+                  <div className="absolute inset-0 bg-white opacity-20 animate-shimmer-flow" style={{ animationDelay: '0.5s' }}></div>
+                </div>
+
+                {/* Node 3: Output */}
+                <div className="flex flex-col items-center gap-4 animate-float-slow" style={{ animationDelay: '2s' }}>
+                  <div className="w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-[#1A1A24] to-[#12121A] border border-[rgba(176,48,82,0.3)] rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300">
+                    <FileOutput className="w-8 h-8 md:w-12 md:h-12 text-[#D76C82]" />
+                  </div>
+                  <span className="text-xs md:text-sm text-[#9CA3AF] font-bold tracking-widest uppercase">Output</span>
+                </div>
+
               </div>
-              <div className="relative z-10 text-[#9CA3AF] text-xl font-medium">
-                Visual Workflow Builder
+
+              {/* Floating Tooltips/Bubbles for extra "Tech" feel */}
+              <div className="absolute top-10 left-10 p-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl animate-pulse-slow hidden lg:block">
+                <span className="text-[10px] text-[#B03052] font-mono">latency: 42ms</span>
               </div>
+              <div className="absolute bottom-10 right-10 p-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl animate-pulse-slow hidden lg:block" style={{ animationDelay: '1.5s' }}>
+                <span className="text-[10px] text-[#D76C82] font-mono">accuracy: 99.8%</span>
+              </div>
+
             </div>
           </div>
         </div>
