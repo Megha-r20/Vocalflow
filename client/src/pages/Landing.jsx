@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// Updated Footer logic
 import { Mic, Zap, ArrowRight, CheckCircle2, Sparkles, Brain, FileOutput, Code2, Headphones, Users, Building2, Rocket, Workflow, Gauge, Plug, Upload, Play, FileText, User } from "lucide-react";
 import Button from "../components/common/Button";
 import Card from "../components/common/Card";
