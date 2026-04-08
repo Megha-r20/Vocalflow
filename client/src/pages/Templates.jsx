@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
 import Card from "../components/common/Card";
 import Button from "../components/common/Button";
@@ -6,6 +6,10 @@ import { Mic, FileText, Mail, MessageSquare, ArrowRight, Zap, PlayCircle } from 
 import "./Templates.css";
 
 export default function Templates() {
+  const [activeCategory, setActiveCategory] = useState("All Templates");
+
+  const categories = ["All Templates", "Productivity", "Communication", "Business", "Personal"];
+
   const templates = [
     {
       icon: FileText,
@@ -27,7 +31,7 @@ export default function Templates() {
       icon: MessageSquare,
       title: "Voice to Notes",
       description: "Extract key points and create structured notes from any audio file.",
-      category: "Note-taking",
+      category: "Productivity",
       badge: "New",
       nodes: [Mic, Zap, MessageSquare]
     },
@@ -35,7 +39,7 @@ export default function Templates() {
       icon: Mic,
       title: "Meeting Transcript",
       description: "Full transcription with speaker identification and timestamping.",
-      category: "Meetings",
+      category: "Business",
       badge: "Popular",
       nodes: [Mic, Zap, FileText]
     },
@@ -43,7 +47,7 @@ export default function Templates() {
       icon: FileText,
       title: "Interview Analysis",
       description: "Analyze interviews and extract specific insights automatically.",
-      category: "Research",
+      category: "Business",
       badge: null,
       nodes: [Mic, Zap, FileText]
     },
@@ -51,11 +55,31 @@ export default function Templates() {
       icon: MessageSquare,
       title: "Podcast Summary",
       description: "Generate episode summaries and show notes from long-form audio.",
-      category: "Content",
+      category: "Communication",
       badge: "Premium",
       nodes: [Mic, Zap, MessageSquare]
     },
+    {
+      icon: Zap,
+      title: "Daily Journaling",
+      description: "Speak your thoughts and let AI organize them into a daily journal entry.",
+      category: "Personal",
+      badge: null,
+      nodes: [Mic, Zap, FileText]
+    },
+    {
+      icon: FileText,
+      title: "Shopping List Creator",
+      description: "Dictate your grocery needs and get a categorized shopping list.",
+      category: "Personal",
+      badge: "New",
+      nodes: [Mic, Zap, MessageSquare]
+    },
   ];
+
+  const filteredTemplates = activeCategory === "All Templates" 
+    ? templates 
+    : templates.filter(t => t.category === activeCategory);
 
   return (
     <div className="templates-container dashboard-animate-in">
@@ -70,16 +94,20 @@ export default function Templates() {
 
         {/* Categories Chips */}
         <div className="templates-categories">
-           <button className="templates-category-chip templates-category-chip-active">All Templates</button>
-           <button className="templates-category-chip">Productivity</button>
-           <button className="templates-category-chip">Communication</button>
-           <button className="templates-category-chip">Business</button>
-           <button className="templates-category-chip">Personal</button>
+          {categories.map((cat) => (
+            <button 
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`templates-category-chip ${activeCategory === cat ? 'templates-category-chip-active' : ''}`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
         {/* Templates Grid */}
         <div className="templates-grid">
-          {templates.map((template, i) => (
+          {filteredTemplates.map((template, i) => (
             <div key={i} className="template-card">
               {/* Card Preview Area */}
               <div className="template-preview">
