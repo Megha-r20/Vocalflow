@@ -13,8 +13,15 @@ export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden relative">
-      <BackgroundGlows />
+    <div 
+      className="min-h-screen text-[#F5F5F7] overflow-hidden relative"
+      style={{ background: "linear-gradient(to bottom, #1a0b12, #000)" }}
+    >
+      {/* Background Glows (Same as Sign In page) */}
+      <div className="bg-glow glow-1"></div>
+      <div className="bg-glow glow-2"></div>
+
+      {/* <BackgroundGlows /> */}
       <Navbar />
 
       {/* Hero Section */}

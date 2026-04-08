@@ -5,12 +5,39 @@
 
 :root {
   --landing-bg: #0B0B10;
+  --landing-bg-gradient: linear-gradient(to bottom, #1a0b12, #000);
   --landing-primary: #B03052;
   --landing-accent: #D76C82;
   --landing-text: #F5F5F7;
   --landing-text-muted: #9CA3AF;
   --landing-card-bg: #12121A;
   --landing-glass-opacity: 0.6;
+}
+
+/* AUTH-STYLE BACKGROUND GLOWS */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glow-1 {
+  width: 700px;
+  height: 700px;
+  background: #B03052;
+  top: -10%;
+  left: -10%;
+}
+
+.glow-2 {
+  width: 800px;
+  height: 800px;
+  background: #D76C82;
+  bottom: -10%;
+  right: -10%;
 }
 
 /* --- KEYFRAMES --- */
