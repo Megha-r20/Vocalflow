@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Mic } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +14,11 @@ export default function Login() {
     e.preventDefault();
     // Simulate login and navigate to dashboard
     console.log("Logging in with:", { email, password });
+    
+    // In a real app, you'd get this token from an API response
+    const mockToken = "vocalflow_mock_jwt_token_" + Date.now();
+    login(mockToken);
+    
     navigate("/dashboard");
   };
 

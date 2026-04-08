@@ -1,13 +1,20 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Settings, User, LayoutDashboard, History, FileText, Mic, Beaker } from "lucide-react";
+import { Settings, User, LayoutDashboard, History, FileText, Mic, Beaker, LogOut } from "lucide-react";
 import Badge from "../common/Badge";
 import { HoverButton } from "../common/HoverEffects";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { isLoggedIn, logout } = useAuth();
   const isLanding = location.pathname === "/";
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
 
   return (
     <nav className="h-20 bg-black/80 backdrop-blur-md border-b border-[rgba(176,48,82,0.1)] px-8 flex items-center justify-between sticky top-0 z-50">
@@ -21,16 +28,35 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-6">
-        <Link to="/login">
-          <HoverButton variant="ghost" className="text-sm px-4 py-2 hover:bg-white/5">
-            Sign In
-          </HoverButton>
-        </Link>
-        <Link to="/signup">
-          <HoverButton className="text-sm font-bold shadow-lg shadow-[rgba(176,48,82,0.3)]">
-            Get Started
-          </HoverButton>
-        </Link>
+        {isLoggedIn ? (
+          <>
+            <Link to="/dashboard">
+              <HoverButton variant="ghost" className="text-sm px-4 py-2 hover:bg-white/5 text-[#F5F5F7]">
+                Dashboard
+              </HoverButton>
+            </Link>
+            <HoverButton 
+              onClick={handleLogout}
+              className="text-sm font-bold shadow-lg shadow-[rgba(176,48,82,0.3)] flex items-center gap-2"
+            >
+              <LogOut size={16} />
+              Logout
+            </HoverButton>
+          </>
+        ) : (
+          <>
+            <Link to="/login">
+              <HoverButton variant="ghost" className="text-sm px-4 py-2 hover:bg-white/5 text-[#F5F5F7]">
+                Sign In
+              </HoverButton>
+            </Link>
+            <Link to="/signup">
+              <HoverButton className="text-sm font-bold shadow-lg shadow-[rgba(176,48,82,0.3)]">
+                Get Started
+              </HoverButton>
+            </Link>
+          </>
+        )}
       </div>
     </nav>
   );
