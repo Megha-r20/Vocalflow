@@ -39,7 +39,7 @@ export default function Navbar() {
 
       {/* CENTER: NAVIGATION (Only if logged in) */}
       {isLoggedIn && (
-        <div className="hidden lg:flex items-center gap-1 bg-[#12121A]/50 p-1 rounded-xl border border-white/5">
+        <div className="hidden lg:flex items-center gap-1 bg-[#12121A]/80 p-1 rounded-xl border border-white/10 shadow-lg shadow-[rgba(176,48,82,0.05)]">
           <NavLink to="/dashboard" icon={<LayoutDashboard size={16} />} label="Dashboard" />
           <NavLink to="/app" icon={<LayoutGrid size={16} />} label="Workflows" />
           <NavLink to="/templates" icon={<FileText size={16} />} label="Templates" />
@@ -69,14 +69,22 @@ export default function Navbar() {
             <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">
               <Link 
                 to="/settings"
-                className="w-9 h-9 flex items-center justify-center rounded-lg text-[#9CA3AF] hover:bg-white/5 hover:text-[#F5F5F7] transition-all"
+                className={`w-9 h-9 flex items-center justify-center rounded-lg transition-all ${
+                  location.pathname === "/settings" 
+                    ? "bg-[#B03052]/10 text-[#D76C82] border border-[#B03052]/30 shadow-[0_0_15px_rgba(176,48,82,0.1)]" 
+                    : "text-[#9CA3AF] hover:bg-white/5 hover:text-[#F5F5F7]"
+                }`}
                 title="Settings"
               >
                 <Settings size={18} />
               </Link>
               <Link 
                 to="/profile"
-                className="w-9 h-9 bg-[#12121A] border border-white/5 flex items-center justify-center rounded-lg text-[#9CA3AF] transition-all hover:text-[#F5F5F7] hover:border-white/20"
+                className={`w-9 h-9 flex items-center justify-center rounded-lg transition-all ${
+                  location.pathname === "/profile" 
+                    ? "bg-[#B03052]/10 text-[#D76C82] border border-[#B03052]/30 shadow-[0_0_15px_rgba(176,48,82,0.1)]" 
+                    : "bg-[#12121A] border border-white/5 text-[#9CA3AF] hover:text-[#F5F5F7] hover:border-white/20"
+                }`}
                 title="Profile"
               >
                 <User size={18} />

@@ -5,7 +5,7 @@
 .recorder-container {
   background: #0B0B10;
   min-height: 100vh;
-  padding: 32px;
+  padding: 0 32px 32px 32px;
 }
 
 .recorder-card {

@@ -4,11 +4,12 @@
 
 .settings-container {
   background: #0B0B10;
-  min-height: 100vh;
+  flex: 1;
   display: grid;
   grid-template-columns: 280px 1fr;
   gap: 0;
   overflow: hidden;
+  min-height: 0; /* Important for flex child to not overflow */
 }
 
 .settings-sidebar {
@@ -16,14 +17,13 @@
   border-right: 1px solid rgba(176, 48, 82, 0.15);
   backdrop-filter: blur(20px);
   padding: 32px 0;
-  height: calc(100vh - 64px); /* Navbar offset */
   overflow-y: auto;
 }
 
 .settings-main {
   padding: 48px 56px;
   overflow-y: auto;
-  height: calc(100vh - 64px); /* Navbar offset */
+  flex: 1;
 }
 
 /* ==================== SETTINGS NAV ==================== */
@@ -212,11 +212,38 @@
 
 /* ==================== RESPONSIVE ==================== */
 
+/* ==================== CUSTOM SCROLLBAR ==================== */
+
+.settings-sidebar::-webkit-scrollbar,
+.settings-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.settings-sidebar::-webkit-scrollbar-track,
+.settings-main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.settings-sidebar::-webkit-scrollbar-thumb,
+.settings-main::-webkit-scrollbar-thumb {
+  background: rgba(176, 48, 82, 0.1);
+  border-radius: 10px;
+}
+
+.settings-sidebar::-webkit-scrollbar-thumb:hover,
+.settings-main::-webkit-scrollbar-thumb:hover {
+  background: rgba(176, 48, 82, 0.3);
+}
+
 @media (max-width: 1024px) {
   .settings-container {
     grid-template-columns: 1fr;
+    overflow-y: auto;
   }
   .settings-sidebar {
     display: none;
+  }
+  .settings-main {
+    padding: 32px 24px;
   }
 }
