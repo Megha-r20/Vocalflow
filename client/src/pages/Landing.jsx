@@ -5,13 +5,15 @@ import Button from "../components/common/Button";
 import Card from "../components/common/Card";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import { BackgroundGlows } from "../components/common/BackgroundGlows";
 import "./Landing.css";
 
 export default function Landing() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden">
+    <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden relative">
+      <BackgroundGlows />
       <Navbar />
 
       {/* Hero Section */}
