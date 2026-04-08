@@ -31,13 +31,31 @@ export default function Landing() {
             <span className="text-[#B03052]">Visually</span>
           </h1>
 
-          <div className="max-w-3xl mx-auto space-y-4 mb-20">
+          <div className="max-w-3xl mx-auto space-y-4 mb-16">
             <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
               Design, connect, and deploy intelligent voice pipelines with our no-code <br className="hidden md:block" /> visual builder.
             </p>
             <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
               Just drag, drop, and ship.
             </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-6 justify-center">
+            <Button
+              onClick={() => navigate('/app')}
+              size="lg"
+              className="bg-[#B03052] hover:bg-[#D76C82] text-white px-10 py-7 rounded-2xl transition-all duration-300 text-lg group font-bold border-none shadow-lg shadow-[rgba(176,48,82,0.2)]"
+            >
+              Get Started Free
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="bg-[#12121A] border border-[rgba(255,255,255,0.1)] hover:bg-[#1A1A24] text-white px-10 py-7 rounded-2xl text-lg transition-all duration-300 font-bold"
+            >
+              View Demo
+            </Button>
           </div>
         </div>
       </section>
