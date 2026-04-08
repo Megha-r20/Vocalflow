@@ -1,1 +1,8 @@
-import express from "express"; import { transcribe } from "../controllers/deepgramController.js"; const router = express.Router(); router.post("/transcribe", transcribe); export default router;
+import express from 'express';
+import { transcribe } from '../controllers/deepgramController.js';
+
+const router = express.Router();
+
+router.post('/transcribe', transcribe);
+
+export default router;
