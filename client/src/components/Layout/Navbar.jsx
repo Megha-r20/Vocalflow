@@ -30,11 +30,13 @@ export default function Navbar() {
       <div className="flex items-center gap-6">
         {isLoggedIn ? (
           <>
-            <Link to="/dashboard">
-              <HoverButton variant="ghost" className="text-sm px-4 py-2 hover:bg-white/5 text-[#F5F5F7]">
-                Dashboard
-              </HoverButton>
-            </Link>
+            <div className="hidden md:flex items-center gap-2 mr-4 border-r border-white/10 pr-6">
+              <NavLink to="/dashboard" icon={<LayoutDashboard size={18} />} label="Dashboard" />
+              <NavLink to="/flow-builder" icon={<Beaker size={18} />} label="Playground" />
+              <NavLink to="/history" icon={<History size={18} />} label="History" />
+              <NavLink to="/settings" icon={<Settings size={18} />} label="Settings" />
+            </div>
+            
             <HoverButton 
               onClick={handleLogout}
               className="text-sm font-bold shadow-lg shadow-[rgba(176,48,82,0.3)] flex items-center gap-2"
