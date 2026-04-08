@@ -4,6 +4,24 @@
 
 ---
 
+## 📸 Product Showcase
+
+````carousel
+![VocalFlow Landing Page](file:///c:/Users/megha/Vocalflow/screenshots/landing.png)
+<!-- slide -->
+![Visual Workflow Builder](file:///c:/Users/megha/Vocalflow/screenshots/builder.png)
+<!-- slide -->
+![Intelligent Dashboard](file:///c:/Users/megha/Vocalflow/screenshots/dashboard.png)
+<!-- slide -->
+![Workflow Templates](file:///c:/Users/megha/Vocalflow/screenshots/templates.png)
+<!-- slide -->
+![Execution History](file:///c:/Users/megha/Vocalflow/screenshots/history.png)
+<!-- slide -->
+![User Profile](file:///c:/Users/megha/Vocalflow/screenshots/profile.png)
+````
+
+---
+
 ## 🛠️ Performance & Capabilities
 
 ### 🎨 Visual Orchestration Engine
