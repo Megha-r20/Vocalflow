@@ -7,7 +7,7 @@
 ## 📸 Product Showcase
 
 ### Experience the Platform
-![Landing Page](screenshots/landing.png)
+<img src="screenshots/landing.png" width="600" alt="Landing Page">
 
 ### Visual Workflow Builder
 ![Visual Workflow Builder](screenshots/builder.png)
