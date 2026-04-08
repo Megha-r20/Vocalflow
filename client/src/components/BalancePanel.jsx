@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Badge from "./UI/Badge";
 import { Zap } from "lucide-react";
 
@@ -7,7 +7,7 @@ export default function BalancePanel() {
     <div className="flex items-center gap-3">
       <Badge
         variant="outline"
-        className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] px-3 py-1.5 gap-2 hover:border-[rgba(176,48,82,0.4)] transition-colors flex items-center"
+        className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] px-3 py-1.5 gap-2 hover:border-[rgba(176,48,82,0.4)] transition-colors"
       >
         <Zap className="w-3.5 h-3.5 text-[#D76C82]" />
         <span className="text-xs">Deepgram</span>
@@ -15,7 +15,7 @@ export default function BalancePanel() {
       </Badge>
       <Badge
         variant="outline"
-        className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] px-3 py-1.5 gap-2 hover:border-[rgba(176,48,82,0.4)] transition-colors flex items-center"
+        className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] px-3 py-1.5 gap-2 hover:border-[rgba(176,48,82,0.4)] transition-colors"
       >
         <Zap className="w-3.5 h-3.5 text-[#D76C82]" />
         <span className="text-xs">Grok</span>
