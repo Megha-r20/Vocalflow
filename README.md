@@ -6,6 +6,9 @@
 
 ## 📸 Product Showcase
 
+### Experience the Platform
+![Landing Page](screenshots/landing.png)
+
 ### Visual Workflow Builder
 ![Visual Workflow Builder](screenshots/builder.png)
 
@@ -18,7 +21,6 @@
 
 ### User Profile & Experience
 ![User Profile](screenshots/profile.png)
-![Landing Page](screenshots/landing.png)
 
 ---
 
