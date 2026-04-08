@@ -20,11 +20,11 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-8">
-        <Link to="/login" className="text-[#F5F5F7] hover:text-[#B03052] font-medium transition-colors text-sm">
+        <Link to="/login" className="text-[#F5F5F7] hover:text-[#B03052] font-semibold transition-colors text-sm tracking-wide">
           Sign In
         </Link>
         <Link to="/signup">
-          <Button className="bg-[#B03052] hover:bg-[#D76C82] text-white rounded-full px-8 py-2.5 font-semibold transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.2)] hover:shadow-[rgba(176,48,82,0.4)] active:scale-95">
+          <Button className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:from-[#D76C82] hover:to-[#B03052] text-white rounded-full px-8 py-2.5 font-bold transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.3)] hover:shadow-[rgba(176,48,82,0.5)] active:scale-95 border-none">
             Get Started
           </Button>
         </Link>
