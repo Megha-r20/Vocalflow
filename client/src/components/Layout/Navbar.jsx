@@ -41,7 +41,7 @@ export default function Navbar() {
       {isLoggedIn && (
         <div className="hidden lg:flex items-center gap-1 bg-[#12121A]/50 p-1 rounded-xl border border-white/5">
           <NavLink to="/dashboard" icon={<LayoutDashboard size={16} />} label="Dashboard" />
-          <NavLink to="/dashboard" icon={<LayoutGrid size={16} />} label="Workflows" />
+          <NavLink to="/flow-builder" icon={<LayoutGrid size={16} />} label="Workflows" />
           <NavLink to="/templates" icon={<FileText size={16} />} label="Templates" />
           <NavLink to="/history" icon={<History size={16} />} label="History" />
           <NavLink to="/recorder" icon={<Mic size={16} />} label="Recorder" />

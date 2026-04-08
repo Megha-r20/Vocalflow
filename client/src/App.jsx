@@ -4,7 +4,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Recorder from './pages/Recorder';
-import FlowBuilder from './pages/FlowBuilder';
+import AppPage from './pages/AppPage';
 import History from './pages/History';
 import Settings from './pages/Settings';
 import ApiStatus from './pages/ApiStatus';
@@ -75,7 +75,7 @@ function App() {
             path="/flow-builder" 
             element={
               <ProtectedRoute>
-                <FlowBuilder />
+                <AppPage />
               </ProtectedRoute>
             } 
           />
