@@ -70,12 +70,19 @@ export default function Navbar() {
               >
                 <Settings size={18} />
               </Link>
+              <Link 
+                to="/profile"
+                className="w-9 h-9 bg-[#12121A] border border-white/5 flex items-center justify-center rounded-lg text-[#9CA3AF] transition-all hover:text-[#F5F5F7] hover:border-white/20"
+                title="Profile"
+              >
+                <User size={18} />
+              </Link>
               <button 
                 onClick={handleLogout}
                 className="w-9 h-9 bg-gradient-to-br from-[#B03052] to-[#D76C82] flex items-center justify-center rounded-lg text-white shadow-lg shadow-[rgba(176,48,82,0.2)] transition-transform hover:scale-105"
                 title="Logout"
               >
-                <User size={18} />
+                <LogOut size={18} />
               </button>
             </div>
           </>

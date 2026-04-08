@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Templates from './pages/Templates';
 import Playground from './pages/Playground';
+import Profile from './pages/Profile';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -37,6 +38,15 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
+          <Route 
+            path="/profile" 
+            element={
+              <div style={{color: 'white', padding: '100px', background: 'blue'}}>
+                <h1>PROFILE ROUTE MATCHED</h1>
+                <p>Path: {window.location.pathname}</p>
+              </div>
+            } 
+          />
           <Route path="/" element={<Landing />} />
           <Route 
             path="/login" 

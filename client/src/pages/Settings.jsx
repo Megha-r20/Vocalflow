@@ -105,8 +105,8 @@ export default function Settings() {
         return (
           <div className="settings-section">
             <div className="settings-section-header">
-              <h2 className="settings-section-title">Security & Access</h2>
-              <p className="settings-item-description">Secure your account with the latest safety features.</p>
+              <h2 className="settings-section-title">Security</h2>
+              <p className="settings-item-description">Manage security settings</p>
             </div>
             <div className="space-y-6">
                <div className="settings-item">
@@ -118,15 +118,26 @@ export default function Settings() {
                </div>
                <div className="settings-item">
                   <div className="settings-item-info">
-                     <div className="settings-item-title">Two-Factor Auth</div>
+                     <div className="settings-item-title">Two-Factor Authentication</div>
                      <div className="settings-item-description">Adds an extra layer of protection to your account.</div>
                   </div>
                   <button className="settings-button text-green-400 border-green-500/20 bg-green-500/10">Enabled</button>
                </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">View Active Sessions</div>
+                     <div className="settings-item-description">Manage your logged-in devices and sessions.</div>
+                  </div>
+                  <button className="settings-button">View All</button>
+               </div>
+               
                <div className="mt-12 pt-8 border-t border-[rgba(239,68,68,0.1)]">
-                  <h3 className="text-red-500 font-bold mb-2">Danger Zone</h3>
-                  <p className="text-xs text-[#6B7280] mb-4">Deleting your account is permanent and cannot be reversed.</p>
-                  <button className="settings-button border-red-500/20 bg-red-500/10 text-red-500 hover:bg-red-500/20">Delete Workspace</button>
+                  <h3 className="text-red-500 font-bold mb-1">Danger Zone</h3>
+                  <p className="text-xs text-[#6B7280] mb-4">Irreversible actions</p>
+                  <div className="flex flex-col items-start gap-4">
+                    <p className="text-xs text-[#9CA3AF]">Once you delete your account, there is no going back. Please be certain.</p>
+                    <button className="settings-button border-red-500/20 bg-red-500/10 text-red-500 hover:bg-red-500/20">Delete Account</button>
+                  </div>
                </div>
             </div>
           </div>
