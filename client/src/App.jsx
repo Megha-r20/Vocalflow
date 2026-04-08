@@ -11,6 +11,7 @@ import ApiStatus from './pages/ApiStatus';
 import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Templates from './pages/Templates';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -91,6 +92,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Settings />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/templates" 
+            element={
+              <ProtectedRoute>
+                <Templates />
               </ProtectedRoute>
             } 
           />
