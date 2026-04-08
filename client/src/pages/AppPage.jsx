@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import NodeSidebar from "../components/workflow/NodeSidebar";
-import FlowCanvas from "../components/workflow/FlowCanvas";
-import OutputPanel from "../components/workflow/OutputPanel";
+import Navbar from "../components/layout/Navbar";
+import NodeSidebar from "../components/flow/NodeSidebar";
+import FlowCanvas from "../components/flow/FlowCanvas";
+import OutputPanel from "../components/flow/OutputPanel";
 
 export default function AppPage() {
   const [selectedNode, setSelectedNode] = useState(null);
