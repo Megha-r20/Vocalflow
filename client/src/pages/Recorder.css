@@ -1,0 +1,280 @@
+/* VocalFlow Clone - Recorder Page CSS */
+
+/* ==================== RECORDER LAYOUT ==================== */
+
+.recorder-container {
+  background: #0B0B10;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.recorder-card {
+  background: rgba(18, 18, 26, 0.95);
+  border: 1px solid rgba(176, 48, 82, 0.2);
+  border-radius: 32px;
+  padding: 48px;
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(176, 48, 82, 0.2);
+  max-width: 800px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.recorder-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(176, 48, 82, 0.05), transparent);
+  pointer-events: none;
+}
+
+/* ==================== RECORDER HEADER ==================== */
+
+.recorder-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.recorder-title {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #F5F5F7, #9CA3AF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.recorder-subtitle {
+  font-size: 16px;
+  color: #9CA3AF;
+}
+
+/* ==================== VISUALIZER ==================== */
+
+.recorder-visualizer {
+  position: relative;
+  height: 100px;
+  margin-bottom: 32px;
+  background: rgba(26, 26, 36, 0.4);
+  border: 1px solid rgba(176, 48, 82, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 20px;
+}
+
+.recorder-visualizer-bar {
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, #B03052, #D76C82);
+  border-radius: 2px;
+  transition: height 0.1s ease;
+  box-shadow: 0 0 10px rgba(176, 48, 82, 0.3);
+}
+
+.visualizer-pulse-active {
+  animation: visualizer-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes visualizer-pulse {
+  0%, 100% { height: 20px; opacity: 0.5; }
+  50% { height: 60px; opacity: 1; }
+}
+
+/* Delay for organic feel */
+.recorder-visualizer-bar:nth-child(2n) { animation-delay: 0.2s; }
+.recorder-visualizer-bar:nth-child(3n) { animation-delay: 0.4s; }
+.recorder-visualizer-bar:nth-child(4n) { animation-delay: 0.1s; }
+.recorder-visualizer-bar:nth-child(5n) { animation-delay: 0.3s; }
+
+/* ==================== RECORD BUTTON ==================== */
+
+.recorder-main-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.recorder-main-button {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.recorder-button-inner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #B03052, #D76C82);
+  border-radius: 50%;
+  box-shadow: 
+    0 8px 32px rgba(176, 48, 82, 0.4),
+    0 0 60px rgba(176, 48, 82, 0.3);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 2;
+  color: white;
+}
+
+.recorder-main-button:hover .recorder-button-inner {
+  transform: scale(1.05);
+  box-shadow: 
+    0 12px 48px rgba(176, 48, 82, 0.6),
+    0 0 80px rgba(176, 48, 82, 0.5);
+}
+
+.recorder-button-recording .recorder-button-inner {
+  border-radius: 24px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  box-shadow: 0 0 50px rgba(239, 68, 68, 0.5);
+}
+
+/* ==================== TIMER ==================== */
+
+.recorder-timer {
+  text-align: center;
+}
+
+.recorder-timer-display {
+  font-size: 56px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: #F5F5F7;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', monospace;
+}
+
+.recorder-timer-recording {
+  color: #ef4444;
+  animation: timer-blink 1s ease-in-out infinite;
+}
+
+@keyframes timer-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ==================== LEVEL METER ==================== */
+
+.recorder-level-meter {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.recorder-level-meter-bar {
+  height: 6px;
+  background: rgba(26, 26, 36, 0.8);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.recorder-level-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ade80, #fbbf24, #ef4444);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ==================== SETTINGS PANEL ==================== */
+
+.recorder-settings {
+  background: rgba(26, 26, 36, 0.4);
+  border: 1px solid rgba(176, 48, 82, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.recorder-settings-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6B7280;
+  margin-bottom: 20px;
+}
+
+.recorder-select {
+  width: 100%;
+  padding: 12px 16px;
+  background: #12121A;
+  border: 1px solid rgba(176, 48, 82, 0.2);
+  border-radius: 12px;
+  color: #F5F5F7;
+  font-size: 14px;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* ==================== RECORDINGS LIST ==================== */
+
+.recorder-recordings {
+  margin-top: 48px;
+}
+
+.recorder-recordings-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #F5F5F7;
+  margin-bottom: 24px;
+}
+
+.recorder-recording-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(26, 26, 36, 0.4);
+  border: 1px solid rgba(176, 48, 82, 0.1);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.recorder-recording-item:hover {
+  background: rgba(176, 48, 82, 0.05);
+  border-color: rgba(176, 48, 82, 0.3);
+  transform: translateX(4px);
+}
+
+.recorder-recording-play {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #B03052, #D76C82);
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+  .recorder-card {
+    padding: 32px 20px;
+  }
+}

@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/layout/Navbar";
 import Card from "../components/common/Card";
 import Button from "../components/common/Button";
-import { Mic, Square, Download } from "lucide-react";
-import { motion } from "framer-motion";
+import { Mic, Square, Download, Play, Trash2, Settings, Volume2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import "./Recorder.css";
 
 export default function Recorder() {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [transcript, setTranscript] = useState("");
+  const [time, setTime] = useState(0);
+
+  // Timer logic
+  useEffect(() => {
+    let interval;
+    if (isRecording) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 1);
+      }, 1000);
+    } else {
+      setTime(0);
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [isRecording]);
+
+  const formatTime = (seconds) => {
+    const min = Math.floor(seconds / 60);
+    const sec = seconds % 60;
+    return `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+  };
 
   const handleRecord = () => {
     if (isRecording) {
@@ -16,121 +38,147 @@ export default function Recorder() {
       setIsProcessing(true);
       setTimeout(() => {
         setIsProcessing(false);
-        setTranscript("This is a sample transcript of your recorded audio. The AI has processed your voice input and converted it to text with high accuracy. You can now use this transcript in your workflows or export it for further use.");
-      }, 2000);
+        setTranscript("This is a sample transcript of your recorded audio. Our advanced AI has automatically identified key points from your recording, highlighting the primary focus on speech clarity and context extraction. You can now use this text in any of your active workflows.");
+      }, 2500);
     } else {
-      setIsRecording(true);
       setTranscript("");
+      setIsRecording(true);
     }
   };
 
+  const recordings = [
+    { id: 1, name: "Project Update.wav", duration: "02:45", date: "Today, 2:30 PM" },
+    { id: 2, name: "Quick Memo.mp3", duration: "00:52", date: "Yesterday, 4:15 PM" },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#0B0B10]">
+    <div className="recorder-container dashboard-animate-in">
       <Navbar />
 
-      <div className="max-w-4xl mx-auto p-8 space-y-8">
+      <div className="max-w-5xl mx-auto space-y-8 relative z-10">
         {/* Header */}
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-[#F5F5F7] mb-2">Voice Recorder</h1>
-          <p className="text-[#9CA3AF]">Record audio and transcribe in real-time</p>
+        <div className="recorder-header">
+          <h1 className="recorder-title">Voice Studio</h1>
+          <p className="recorder-subtitle">High-fidelity recording with real-time AI transcription</p>
         </div>
 
-        {/* Recorder Card */}
-        <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-12 rounded-2xl">
-          <div className="flex flex-col items-center justify-center space-y-8">
-            {/* Recording Button */}
-            <div className="relative">
-              {isRecording && (
-                <>
-                  <motion.div
-                    className="absolute inset-0 bg-[#B03052] rounded-full opacity-20"
-                    animate={{ scale: [1, 1.5, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  />
-                  <motion.div
-                    className="absolute inset-0 bg-[#D76C82] rounded-full opacity-20"
-                    animate={{ scale: [1, 1.8, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                  />
-                </>
-              )}
-              <Button
-                onClick={handleRecord}
-                className={`w-32 h-32 rounded-full transition-all duration-300 ${
-                  isRecording
-                    ? "bg-red-500 hover:bg-red-600"
-                    : "bg-gradient-to-br from-[#B03052] to-[#D76C82] hover:scale-105"
-                } shadow-lg shadow-[rgba(176,48,82,0.5)]`}
-              >
-                {isRecording ? (
-                  <Square className="w-12 h-12 text-white" />
-                ) : (
-                  <Mic className="w-12 h-12 text-white" />
-                )}
-              </Button>
+        {/* Main Recorder Section */}
+        <div className="recorder-card">
+          <div className="flex flex-col items-center">
+            
+            {/* Visualizer */}
+            <div className="recorder-visualizer w-full">
+              {[...Array(24)].map((_, i) => (
+                <div 
+                  key={i} 
+                  className={`recorder-visualizer-bar ${isRecording ? 'visualizer-pulse-active' : ''}`}
+                  style={{ height: isRecording ? undefined : '4px' }}
+                />
+              ))}
             </div>
 
-            {/* Status */}
-            <div className="text-center">
-              {isProcessing ? (
-                <div className="text-[#D76C82] font-medium">Processing audio...</div>
-              ) : isRecording ? (
-                <div className="space-y-2">
-                  <div className="text-[#F5F5F7] font-medium">Recording...</div>
-                  <div className="text-sm text-[#9CA3AF]">Click to stop</div>
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  <div className="text-[#F5F5F7] font-medium">Ready to record</div>
-                  <div className="text-sm text-[#9CA3AF]">Click to start recording</div>
-                </div>
-              )}
+            {/* Timer */}
+            <div className={`recorder-timer-display mb-8 ${isRecording ? 'recorder-timer-recording' : ''}`}>
+               {formatTime(time)}
+            </div>
+
+            {/* Controls */}
+            <div className="recorder-main-button-container">
+               <button 
+                onClick={handleRecord}
+                className={`recorder-main-button ${isRecording ? 'recorder-button-recording' : ''}`}
+               >
+                 <div className="recorder-button-inner">
+                    {isRecording ? <Square size={40} /> : <Mic size={40} />}
+                 </div>
+               </button>
+               <div className="text-sm font-semibold tracking-widest text-[#6B7280] uppercase">
+                  {isProcessing ? "Finalizing..." : isRecording ? "Recording Live" : "Ready to Start"}
+               </div>
+            </div>
+
+            {/* Level Meter */}
+            <div className="recorder-level-meter">
+               <div className="flex justify-between items-center mb-2">
+                  <span className="text-[10px] text-[#6B7280] font-bold uppercase tracking-wider">Input Level</span>
+                  <Volume2 size={12} className="text-[#6B7280]" />
+               </div>
+               <div className="recorder-level-meter-bar">
+                  <div className="recorder-level-meter-fill" style={{ width: isRecording ? '65%' : '0%' }}></div>
+               </div>
             </div>
           </div>
-        </Card>
 
-        {/* Transcript Output */}
-        {transcript && (
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-[#F5F5F7]">Transcript</h2>
-              <Button
-                variant="outline"
-                size="sm"
-                className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] hover:bg-[#1A1A24] text-[#F5F5F7] flex items-center gap-2"
-              >
-                <Download className="w-4 h-4" />
-                Export
-              </Button>
-            </div>
-            <div className="bg-[#1A1A24] border border-[rgba(176,48,82,0.1)] rounded-xl p-4">
-              <p className="text-[#F5F5F7] leading-relaxed">{transcript}</p>
-            </div>
-          </Card>
-        )}
+          {/* Settings Subpanel */}
+          <div className="recorder-settings">
+             <h3 className="recorder-settings-title">Recording Settings</h3>
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="text-[11px] text-[#9CA3AF] font-bold uppercase">Source</label>
+                  <select className="recorder-select">
+                    <option>Built-in Microphone</option>
+                    <option>USB Audio Interface</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[11px] text-[#9CA3AF] font-bold uppercase">AI Model</label>
+                  <select className="recorder-select">
+                    <option>Deepgram Nova-2 (Fast)</option>
+                    <option>Whisper Large-v3 (Accurate)</option>
+                  </select>
+                </div>
+             </div>
+          </div>
+        </div>
 
-        {/* Info Card */}
-        <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl">
-          <h3 className="font-semibold text-[#F5F5F7] mb-3">How it works</h3>
-          <ul className="space-y-2 text-sm text-[#9CA3AF]">
-            <li className="flex items-start gap-2">
-              <span className="w-1.5 h-1.5 bg-[#B03052] rounded-full mt-2"></span>
-              <span>Click the microphone button to start recording</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-1.5 h-1.5 bg-[#B03052] rounded-full mt-2"></span>
-              <span>Speak clearly into your device's microphone</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-1.5 h-1.5 bg-[#B03052] rounded-full mt-2"></span>
-              <span>Click the stop button when you're done</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-1.5 h-1.5 bg-[#B03052] rounded-full mt-2"></span>
-              <span>Your audio will be transcribed automatically using AI</span>
-            </li>
-          </ul>
-        </Card>
+        {/* Output & History Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+           
+           {/* Transcript Column */}
+           <div className="lg:col-span-2">
+              <AnimatePresence>
+                {transcript && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="bg-[#12121A] border border-[rgba(176,48,82,0.2)] p-6 rounded-3xl"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <h2 className="text-lg font-bold text-[#F5F5F7]">Transcription Output</h2>
+                      <Button className="bg-[#B03052] hover:bg-[#D76C82] text-xs h-8 px-4 flex items-center gap-2">
+                        <Download size={14} /> Export
+                      </Button>
+                    </div>
+                    <div className="bg-black/20 p-5 rounded-2xl border border-white/5 leading-relaxed text-[#9CA3AF]">
+                      {transcript}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+           </div>
+
+           {/* History Column */}
+           <div className="recorder-recordings lg:mt-0">
+              <h2 className="recorder-recordings-title">Recent Sessions</h2>
+              <div className="space-y-3">
+                 {recordings.map(rec => (
+                   <div key={rec.id} className="recorder-recording-item">
+                      <div className="recorder-recording-play">
+                         <Play size={16} fill="currentColor" />
+                      </div>
+                      <div className="flex-1">
+                         <div className="text-sm font-bold text-[#F5F5F7]">{rec.name}</div>
+                         <div className="text-[10px] text-[#6B7280]">{rec.duration} • {rec.date}</div>
+                      </div>
+                      <button className="text-[#6B7280] hover:text-red-400 transition-colors">
+                         <Trash2 size={16} />
+                      </button>
+                   </div>
+                 ))}
+              </div>
+           </div>
+
+        </div>
       </div>
     </div>
   );
