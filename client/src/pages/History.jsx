@@ -66,19 +66,19 @@ export default function History() {
            
            <button 
              onClick={() => setStatusFilter("All")}
-             className={`history-filter-button-chip ${statusFilter === "All" ? "history-filter-button-active" : ""}`}
+             className={`history-filter-button ${statusFilter === "All" ? "history-filter-button-active" : ""}`}
            >
              All
            </button>
            <button 
              onClick={() => setStatusFilter("Successful")}
-             className={`history-filter-button-chip ${statusFilter === "Successful" ? "history-filter-button-active" : ""}`}
+             className={`history-filter-button ${statusFilter === "Successful" ? "history-filter-button-active" : ""}`}
            >
              Successful
            </button>
            <button 
              onClick={() => setStatusFilter("Failed")}
-             className={`history-filter-button-chip ${statusFilter === "Failed" ? "history-filter-button-active" : ""}`}
+             className={`history-filter-button ${statusFilter === "Failed" ? "history-filter-button-active" : ""}`}
            >
              Failed
            </button>

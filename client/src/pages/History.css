@@ -28,22 +28,26 @@
 .history-filters {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+  background: rgba(18, 18, 26, 0.4);
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .history-filter-button {
-  padding: 10px 20px;
-  background: rgba(18, 18, 26, 0.8);
-  border: 1px solid rgba(176, 48, 82, 0.2);
-  border-radius: 12px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
   color: #9CA3AF;
   cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(20px);
   font-size: 14px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .history-filter-button:hover {
