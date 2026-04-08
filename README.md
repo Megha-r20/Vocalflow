@@ -6,19 +6,19 @@
 
 ## 📸 Product Showcase
 
-````carousel
-![VocalFlow Landing Page](file:///c:/Users/megha/Vocalflow/screenshots/landing.png)
-<!-- slide -->
-![Visual Workflow Builder](file:///c:/Users/megha/Vocalflow/screenshots/builder.png)
-<!-- slide -->
-![Intelligent Dashboard](file:///c:/Users/megha/Vocalflow/screenshots/dashboard.png)
-<!-- slide -->
-![Workflow Templates](file:///c:/Users/megha/Vocalflow/screenshots/templates.png)
-<!-- slide -->
-![Execution History](file:///c:/Users/megha/Vocalflow/screenshots/history.png)
-<!-- slide -->
-![User Profile](file:///c:/Users/megha/Vocalflow/screenshots/profile.png)
-````
+### Visual Workflow Builder
+![Visual Workflow Builder](screenshots/builder.png)
+
+### Actionable Intelligence Dashboard
+![Intelligent Dashboard](screenshots/dashboard.png)
+
+### Workflow Templates & History
+![Workflow Templates](screenshots/templates.png)
+![Execution History](screenshots/history.png)
+
+### User Profile & Experience
+![User Profile](screenshots/profile.png)
+![Landing Page](screenshots/landing.png)
 
 ---
 
@@ -133,7 +133,7 @@ VocalFlow features a **Premium Dark Glassmorphism** design system, engineered fo
 Contributions are welcome! Please ensure that your pull requests follow the established architectural patterns (Service-Controller-Model) and maintain consistent code formatting.
 
 ## 📬 Contact
-**VocalFlow Engineering Team**  
+ 
 GitHub: [Megha-r20](https://github.com/Megha-r20)  
 Project Link: [https://github.com/Megha-r20/Vocalflow](https://github.com/Megha-r20/Vocalflow)
 
