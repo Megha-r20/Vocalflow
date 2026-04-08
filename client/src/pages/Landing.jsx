@@ -92,108 +92,118 @@ export default function Landing() {
 
           <div className="steps-container">
             {/* Step 1 */}
-            <div className="step-card" data-step="1">
-              <div className="step-icon-wrapper">
-                <Mic className="step-icon" />
+            <div className="step-card group" data-step="1">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <div className="step-icon-wrapper">
+                  <Mic className="step-icon" />
+                </div>
+                <h3 className="step-title">Voice Input</h3>
+                <p className="step-desc">
+                  Connect your audio source or microphone. Support for real-time streaming and file uploads.
+                </p>
               </div>
-              <h3 className="step-title">Voice Input</h3>
-              <p className="step-desc">
-                Connect your audio source or microphone. Support for real-time streaming and file uploads.
-              </p>
             </div>
 
             {/* Step 2 */}
-            <div className="step-card" data-step="2">
-              <div className="step-icon-wrapper">
-                <Brain className="step-icon" />
+            <div className="step-card group" data-step="2">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <div className="step-icon-wrapper">
+                  <Brain className="step-icon" />
+                </div>
+                <h3 className="step-title">AI Processing</h3>
+                <p className="step-desc">
+                  Apply AI models with drag-and-drop nodes. Transcribe, analyze, enhance, and transform instantly.
+                </p>
               </div>
-              <h3 className="step-title">AI Processing</h3>
-              <p className="step-desc">
-                Apply AI models with drag-and-drop nodes. Transcribe, analyze, enhance, and transform instantly.
-              </p>
             </div>
 
             {/* Step 3 */}
-            <div className="step-card" data-step="3">
-              <div className="step-icon-wrapper">
-                <FileOutput className="step-icon" />
+            <div className="step-card group" data-step="3">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <div className="step-icon-wrapper">
+                  <FileOutput className="step-icon" />
+                </div>
+                <h3 className="step-title">Smart Output</h3>
+                <p className="step-desc">
+                  Export results in any format. Deploy to production with one click. Scale instantly.
+                </p>
               </div>
-              <h3 className="step-title">Smart Output</h3>
-              <p className="step-desc">
-                Export results in any format. Deploy to production with one click. Scale instantly.
-              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Use Cases Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl font-bold mb-6">
-            Who <span className="bg-gradient-to-r from-[#B03052] to-[#D76C82] bg-clip-text text-transparent">Uses</span> VocalFlow Clone?
+      {/* Who Uses Section */}
+      <section className="who-uses">
+        <div className="who-uses-header">
+          <h2>
+            Who <span>Uses</span> VocalFlow Clone?
           </h2>
-          <p className="text-xl text-[#9CA3AF] max-w-2xl mx-auto">
+          <p>
             Trusted by teams building the future of voice AI
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="use-cases-container">
           {/* Use Case 1 */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.3)] group hover:scale-105 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/0 to-[#B03052]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="use-case-card group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B03052]/20 to-[#D76C82]/20 rounded-2xl flex items-center justify-center mb-6 border border-[rgba(176,48,82,0.3)] group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[rgba(176,48,82,0.4)]">
-                <Code2 className="w-8 h-8 text-[#D76C82]" />
+              <div className="use-case-icon">
+                <Code2 />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Developers</h3>
-              <p className="text-[#9CA3AF] leading-relaxed">
+              <h3 className="use-case-title">Developers</h3>
+              <p className="use-case-desc">
                 Build AI voice apps faster with visual workflows and plug-and-play integrations
               </p>
             </div>
-          </Card>
+          </div>
 
           {/* Use Case 2 */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.3)] group hover:scale-105 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/0 to-[#B03052]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="use-case-card group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B03052]/20 to-[#D76C82]/20 rounded-2xl flex items-center justify-center mb-6 border border-[rgba(176,48,82,0.3)] group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[rgba(176,48,82,0.4)]">
-                <Headphones className="w-8 h-8 text-[#D76C82]" />
+              <div className="use-case-icon">
+                <Headphones />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Call Centers</h3>
-              <p className="text-[#9CA3AF] leading-relaxed">
+              <h3 className="use-case-title">Call Centers</h3>
+              <p className="use-case-desc">
                 Automate voice routing, transcription, and analysis for better customer experiences
               </p>
             </div>
-          </Card>
+          </div>
 
           {/* Use Case 3 */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.3)] group hover:scale-105 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/0 to-[#B03052]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="use-case-card group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B03052]/20 to-[#D76C82]/20 rounded-2xl flex items-center justify-center mb-6 border border-[rgba(176,48,82,0.3)] group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[rgba(176,48,82,0.4)]">
-                <Users className="w-8 h-8 text-[#D76C82]" />
+              <div className="use-case-icon">
+                <Users />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Support Teams</h3>
-              <p className="text-[#9CA3AF] leading-relaxed">
+              <h3 className="use-case-title">Support Teams</h3>
+              <p className="use-case-desc">
                 Streamline customer support with intelligent voice-to-text and sentiment analysis
               </p>
             </div>
-          </Card>
+          </div>
 
           {/* Use Case 4 */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.3)] group hover:scale-105 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/0 to-[#B03052]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div className="use-case-card group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-[#B03052]/20 to-[#D76C82]/20 rounded-2xl flex items-center justify-center mb-6 border border-[rgba(176,48,82,0.3)] group-hover:border-[rgba(176,48,82,0.6)] transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[rgba(176,48,82,0.4)]">
-                <Rocket className="w-8 h-8 text-[#D76C82]" />
+              <div className="use-case-icon">
+                <Rocket />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Startups</h3>
-              <p className="text-[#9CA3AF] leading-relaxed">
+              <h3 className="use-case-title">Startups</h3>
+              <p className="use-case-desc">
                 Launch voice AI products faster without building infrastructure from scratch
               </p>
             </div>
-          </Card>
+          </div>
         </div>
       </section>
 
