@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import Card from '../components/ui/Card';
 import { Mail, Lock, User as UserIcon, Github } from 'lucide-react';
+
 import './Auth.css';
 
 export const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="auth-page container">
       <Card className="auth-card glass">
@@ -16,7 +18,7 @@ export const Login = () => {
           <p>Enter your credentials to access your account.</p>
         </div>
         
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={(e) => { e.preventDefault(); navigate('/dashboard'); }}>
           <Input label="Email address" type="email" placeholder="name@example.com" />
           <Input label="Password" type="password" placeholder="••••••••" />
           <div className="auth-actions">
@@ -30,7 +32,7 @@ export const Login = () => {
         </div>
 
         <div className="social-auth">
-          <Button variant="secondary" style={{ width: '100%' }} icon={Github}>GitHub</Button>
+          <Button variant="secondary" style={{ width: '100%', icon: Github }}>GitHub</Button>
         </div>
 
         <p className="auth-footer">
@@ -42,6 +44,7 @@ export const Login = () => {
 };
 
 export const Signup = () => {
+  const navigate = useNavigate();
   return (
     <div className="auth-page container">
       <Card className="auth-card glass">
@@ -51,7 +54,7 @@ export const Signup = () => {
           <p>Get started with VocalFlow today.</p>
         </div>
         
-        <form className="auth-form">
+        <form className="auth-form" onSubmit={(e) => { e.preventDefault(); navigate('/dashboard'); }}>
           <Input label="Full Name" type="text" placeholder="John Doe" />
           <Input label="Email address" type="email" placeholder="name@example.com" />
           <Input label="Password" type="password" placeholder="••••••••" />
@@ -63,7 +66,7 @@ export const Signup = () => {
         </div>
 
         <div className="social-auth">
-          <Button variant="secondary" style={{ width: '100%' }} icon={Github}>GitHub</Button>
+          <Button variant="secondary" style={{ width: '100%', icon: Github }}>GitHub</Button>
         </div>
 
         <p className="auth-footer">
