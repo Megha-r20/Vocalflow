@@ -12,10 +12,10 @@ export default function Navbar() {
     <nav className="h-16 bg-[#12121A]/80 backdrop-blur-xl border-b border-[rgba(176,48,82,0.15)] px-6 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center gap-8">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 min-w-[32px] min-h-[32px] bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-lg flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-[rgba(176,48,82,0.2)] overflow-hidden">
-            <Mic className="w-4 h-4 text-white" />
+          <div className="w-9 h-9 min-w-[36px] min-h-[36px] bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-full flex items-center justify-center transition-transform group-hover:scale-105 shadow-lg shadow-[rgba(176,48,82,0.3)] overflow-hidden">
+            <Mic className="w-5 h-5 text-white" />
           </div>
-          <span className="font-bold text-[#F5F5F7] tracking-tight">VocalFlow</span>
+          <span className="font-bold text-[#F5F5F7] tracking-tight text-lg">VocalFlow Clone</span>
         </Link>
 
         {!isLanding && (
@@ -37,7 +37,7 @@ export default function Navbar() {
               <Button variant="ghost" className="text-[#F5F5F7] hover:bg-[#1A1A24]">Sign In</Button>
             </Link>
             <Link to="/signup">
-              <Button className="bg-[#B03052] hover:bg-[#8f2642] text-white">Get Started</Button>
+              <Button className="bg-[#B03052] hover:bg-[#8f2642] text-white rounded-full px-6">Get Started</Button>
             </Link>
           </>
         ) : (
