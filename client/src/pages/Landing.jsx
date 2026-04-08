@@ -98,20 +98,21 @@ export default function Landing() {
 
             {/* Step 1 */}
             <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-md transition-all duration-300 hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:-translate-y-3 h-full overflow-visible">
+              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(176,48,82,0.6)] animate-pulse z-20">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
                     1
                   </div>
                   
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(176,48,82,0.4)] group-hover:shadow-[0_0_40px_rgba(176,48,82,0.6)] transition-all duration-300 mx-auto">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
                     <Mic className="w-10 h-10 text-white" />
                   </div>
                   
                   <h3 className="text-2xl font-bold mb-5 text-center text-white">Voice Input</h3>
                   <p className="text-[#aaa] text-center leading-relaxed">
-                    Connect your audio source or microphone. Support for real-time streaming and high-quality uploads.
+                    Connect your audio source or microphone. Support for real-time streaming and file uploads.
                   </p>
                 </div>
               </Card>
@@ -119,14 +120,15 @@ export default function Landing() {
 
             {/* Step 2 */}
             <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-md transition-all duration-300 hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:-translate-y-3 h-full overflow-visible">
+              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#D76C82] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(215,108,130,0.6)] animate-pulse z-20">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#D76C82] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
                     2
                   </div>
                   
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#D76C82] to-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(215,108,130,0.4)] group-hover:shadow-[0_0_40px_rgba(215,108,130,0.6)] transition-all duration-300 mx-auto">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#D76C82] to-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
                     <Brain className="w-10 h-10 text-white" />
                   </div>
                   
@@ -140,20 +142,21 @@ export default function Landing() {
 
             {/* Step 3 */}
             <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-md transition-all duration-300 hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:-translate-y-3 h-full overflow-visible">
+              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(176,48,82,0.6)] animate-pulse z-20">
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
                     3
                   </div>
                   
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(176,48,82,0.4)] group-hover:shadow-[0_0_40px_rgba(176,48,82,0.6)] transition-all duration-300 mx-auto">
+                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
                     <FileOutput className="w-10 h-10 text-white" />
                   </div>
                   
                   <h3 className="text-2xl font-bold mb-5 text-center text-white">Smart Output</h3>
                   <p className="text-[#aaa] text-center leading-relaxed">
-                    Export results in any format. Deploy to production with one click. Scale your workflows instantly.
+                    Export results in any format. Deploy to production with one click. Scale instantly.
                   </p>
                 </div>
               </Card>
