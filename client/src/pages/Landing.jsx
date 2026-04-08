@@ -6,6 +6,7 @@ import Card from "../components/common/Card";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { BackgroundGlows } from "../components/common/BackgroundGlows";
+import { HoverButton } from "../components/common/HoverEffects";
 import "./Landing.css";
 
 export default function Landing() {
@@ -43,21 +44,19 @@ export default function Landing() {
           </div>
 
           <div className="flex flex-wrap items-center gap-6 justify-center">
-            <Button
-              onClick={() => navigate('/app')}
-              size="lg"
-              className="bg-[#B03052] hover:bg-[#D76C82] text-white px-10 py-7 rounded-2xl transition-all duration-300 text-lg group font-bold border-none shadow-lg shadow-[rgba(176,48,82,0.2)]"
+            <HoverButton
+              onClick={() => navigate('/signup')}
+              className="px-10 py-7 text-xl rounded-2xl flex items-center gap-3 font-bold shadow-[0_0_30px_rgba(176,48,82,0.4)]"
             >
               Get Started Free
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="bg-[#12121A] border border-[rgba(255,255,255,0.1)] hover:bg-[#1A1A24] text-white px-10 py-7 rounded-2xl text-lg transition-all duration-300 font-bold"
+              <ArrowRight className="w-6 h-6" />
+            </HoverButton>
+            <HoverButton
+              variant="secondary"
+              className="px-10 py-7 text-xl rounded-2xl font-bold bg-[#12121A]/80 backdrop-blur-md border-[rgba(255,255,255,0.1)]"
             >
               View Demo
-            </Button>
+            </HoverButton>
           </div>
         </div>
       </section>
