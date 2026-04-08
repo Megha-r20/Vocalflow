@@ -1,14 +1,15 @@
 import { useState } from "react";
 import Navbar from "../components/layout/Navbar";
-import NodeSidebar from "../components/flow/NodeSidebar";
-import FlowCanvas from "../components/flow/FlowCanvas";
-import OutputPanel from "../components/flow/OutputPanel";
+import NodeSidebar from "../components/workflow/NodeSidebar";
+import FlowCanvas from "../components/workflow/FlowCanvas";
+import OutputPanel from "../components/workflow/OutputPanel";
+import "./AppPage.css";
 
 export default function AppPage() {
   const [selectedNode, setSelectedNode] = useState(null);
 
   return (
-    <div className="h-screen bg-[#0B0B10] flex flex-col overflow-hidden">
+    <div className="h-screen bg-[#0B0B10] flex flex-col overflow-hidden dashboard-animate-in">
       <Navbar />
 
       <div className="flex-1 flex overflow-hidden">
@@ -16,7 +17,9 @@ export default function AppPage() {
         <NodeSidebar />
 
         {/* Center Canvas - Workflow Builder */}
-        <FlowCanvas selectedNode={selectedNode} setSelectedNode={setSelectedNode} />
+        <div className="flex-1 relative flex overflow-hidden">
+            <FlowCanvas selectedNode={selectedNode} setSelectedNode={setSelectedNode} />
+        </div>
 
         {/* Right Panel - Output & Settings */}
         <OutputPanel selectedNode={selectedNode} />
