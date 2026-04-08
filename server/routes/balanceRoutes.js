@@ -1,12 +1,1 @@
-const express = require('express');
-const router = express.Router();
-
-// Mock data for balances
-router.get('/', (req, res) => {
-  res.json({
-    deepgram: 24.50,
-    grok: 18.30
-  });
-});
-
-module.exports = router;
+import express from "express"; import { getBalance } from "../controllers/balanceController.js"; const router = express.Router(); router.get("/", getBalance); export default router;

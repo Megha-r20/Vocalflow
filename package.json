@@ -1,32 +1,15 @@
 {
   "name": "vocalflow-clone",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Vocalflow Clone - Voice to Flow Visualization",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "server": "nodemon server/index.js"
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run server --prefix server\"",
+    "install:all": "npm install --prefix client && npm install --prefix server",
+    "client": "npm run dev --prefix client",
+    "server": "npm run server --prefix server"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@vitejs/plugin-react": "^6.0.1",
-    "lucide-react": "^1.7.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.14.0",
-    "vite": "^8.0.5"
-  },
-  "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.1",
-    "express": "^5.2.1",
-    "framer-motion": "^12.38.0",
-    "mongoose": "^9.4.1",
-    "motion": "^12.38.0",
-    "nodemon": "^3.1.14"
+    "concurrently": "^8.2.2"
   }
 }

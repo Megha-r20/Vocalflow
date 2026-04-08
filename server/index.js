@@ -1,8 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
@@ -13,15 +13,11 @@ app.use(cors());
 app.use(express.json());
 
 // Basic Route
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'OK', message: 'VocalFlow API is running smoothly' });
+app.get('/', (req, res) => {
+  res.send('Vocalflow API is running');
 });
 
-// Routes Placeholder (will implement actual routes next)
-app.use('/api/balance', require('./routes/balanceRoutes'));
-app.use('/api/deepgram', require('./routes/deepgramRoutes'));
-app.use('/api/grok', require('./routes/grokRoutes'));
-
+// Start Server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });

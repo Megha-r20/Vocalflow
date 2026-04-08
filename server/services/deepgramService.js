@@ -1,1 +1,1 @@
-// Placeholder
+export const deepgramService = {};
