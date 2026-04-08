@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Card from "../components/UI/Card";
-import Input from "../components/UI/Input";
-import Button from "../components/UI/Button";
-import Label from "../components/UI/Label";
+import Card from "../components/common/Card";
+import Input from "../components/common/Input";
+import Button from "../components/common/Button";
+import Label from "../components/common/Label";
 import { Mic } from "lucide-react";
 
 export default function Signup() {

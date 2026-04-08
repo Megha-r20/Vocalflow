@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Card from "../components/UI/Card";
-import Input from "../components/UI/Input";
-import Button from "../components/UI/Button";
+import Navbar from "../components/layout/Navbar";
+import Card from "../components/common/Card";
+import Input from "../components/common/Input";
+import Button from "../components/common/Button";
 import { Search, Filter, Download, Eye } from "lucide-react";
 
 export default function History() {

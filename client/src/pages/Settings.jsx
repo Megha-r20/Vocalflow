@@ -1,9 +1,9 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Card from "../components/UI/Card";
-import Input from "../components/UI/Input";
-import Button from "../components/UI/Button";
-import Switch from "../components/UI/Switch";
+import Navbar from "../components/layout/Navbar";
+import Card from "../components/common/Card";
+import Input from "../components/common/Input";
+import Button from "../components/common/Button";
+import Switch from "../components/common/Switch";
 import { Key, Bell, Palette, Shield } from "lucide-react";
 
 export default function Settings() {

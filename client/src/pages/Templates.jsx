@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Card from "../components/UI/Card";
-import Button from "../components/UI/Button";
+import Navbar from "../components/layout/Navbar";
+import Card from "../components/common/Card";
+import Button from "../components/common/Button";
 import { Mic, FileText, Mail, MessageSquare, ArrowRight } from "lucide-react";
 
 export default function Templates() {

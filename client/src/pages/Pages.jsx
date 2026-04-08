@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '../components/ui/Card';
-import Input from '../components/ui/Input';
-import Button from '../components/ui/Button';
-import Badge from '../components/ui/Badge';
+import Card from '../components/common/Card';
+import Input from '../components/common/Input';
+import Button from '../components/common/Button';
+import Badge from '../components/common/Badge';
 import { Key, Shield, Bell, Moon, Sun, Save, Search, Filter, Download, ExternalLink } from 'lucide-react';
 import './Pages.css';
 
