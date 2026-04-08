@@ -1,197 +1,227 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/layout/Navbar";
-import Card from "../components/common/Card";
-import Input from "../components/common/Input";
-import Button from "../components/common/Button";
+import { User, Key, Sliders, Bell, Shield, CreditCard, Trash2, Mail, Lock, Check } from "lucide-react";
 import Switch from "../components/common/Switch";
-import { Key, Bell, Palette, Shield } from "lucide-react";
+import "./Settings.css";
 
 export default function Settings() {
+  const [activeTab, setActiveTab] = useState("account");
+
+  const navItems = [
+    { id: "account", label: "My Account", icon: <User size={18} /> },
+    { id: "api", label: "API Keys", icon: <Key size={18} /> },
+    { id: "preferences", label: "Studio Prefs", icon: <Sliders size={18} /> },
+    { id: "security", label: "Security", icon: <Shield size={18} /> },
+    { id: "billing", label: "Billing", icon: <CreditCard size={18} /> },
+  ];
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "account":
+        return (
+          <div className="settings-section">
+            <div className="settings-section-header">
+              <h2 className="settings-section-title">Account Profile</h2>
+              <p className="settings-item-description">Manage your personal information and public profile.</p>
+            </div>
+            <div className="space-y-6">
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Full Name</div>
+                     <div className="settings-item-description">Displayed on your invoices and studio exports.</div>
+                  </div>
+                  <input type="text" className="settings-input" defaultValue="Alex Rivera" />
+               </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Email Address</div>
+                     <div className="settings-item-description">Used for login and vital notifications.</div>
+                  </div>
+                  <input type="email" className="settings-input" defaultValue="alex@vocalflow.ai" />
+               </div>
+               <button className="settings-button settings-button-primary mt-4">Save Changes</button>
+            </div>
+          </div>
+        );
+      case "api":
+        return (
+          <div className="settings-section">
+            <div className="settings-section-header">
+              <h2 className="settings-section-title">API Keys</h2>
+              <p className="settings-item-description">Integrate your studio with Grok, Deepgram, and OpenAI.</p>
+            </div>
+            <div className="space-y-6">
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Deepgram Secret</div>
+                     <div className="settings-item-description">Used for real-time transcription.</div>
+                  </div>
+                  <input type="password" underline="true" className="settings-input" defaultValue="sk_dg_8y23h890h123h12" />
+               </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Grok API Key</div>
+                     <div className="settings-item-description">Powers your advanced logic nodes.</div>
+                  </div>
+                  <input type="password" password="true" className="settings-input" defaultValue="xai-bh12h3b12h3b12h" />
+               </div>
+               <button className="settings-button settings-button-primary mt-4">Update Keys</button>
+            </div>
+          </div>
+        );
+      case "preferences":
+        return (
+          <div className="settings-section">
+            <div className="settings-section-header">
+              <h2 className="settings-section-title">Studio Preferences</h2>
+              <p className="settings-item-description">Tailor the workflow builder to your specific style.</p>
+            </div>
+            <div className="space-y-4">
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Auto-save Workflows</div>
+                     <div className="settings-item-description">Saves your canvas state every 30 seconds.</div>
+                  </div>
+                  <Switch defaultChecked />
+               </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Snap to Grid</div>
+                     <div className="settings-item-description">Ensures nodes align perfectly for clean layouts.</div>
+                  </div>
+                  <Switch />
+               </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">High Visibility Ports</div>
+                     <div className="settings-item-description">Increases the size of node connection points.</div>
+                  </div>
+                  <Switch defaultChecked />
+               </div>
+            </div>
+          </div>
+        );
+      case "security":
+        return (
+          <div className="settings-section">
+            <div className="settings-section-header">
+              <h2 className="settings-section-title">Security & Access</h2>
+              <p className="settings-item-description">Secure your account with the latest safety features.</p>
+            </div>
+            <div className="space-y-6">
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Change Password</div>
+                     <div className="settings-item-description">Update your login credentials regularly.</div>
+                  </div>
+                  <button className="settings-button">Update</button>
+               </div>
+               <div className="settings-item">
+                  <div className="settings-item-info">
+                     <div className="settings-item-title">Two-Factor Auth</div>
+                     <div className="settings-item-description">Adds an extra layer of protection to your account.</div>
+                  </div>
+                  <button className="settings-button text-green-400 border-green-500/20 bg-green-500/10">Enabled</button>
+               </div>
+               <div className="mt-12 pt-8 border-t border-[rgba(239,68,68,0.1)]">
+                  <h3 className="text-red-500 font-bold mb-2">Danger Zone</h3>
+                  <p className="text-xs text-[#6B7280] mb-4">Deleting your account is permanent and cannot be reversed.</p>
+                  <button className="settings-button border-red-500/20 bg-red-500/10 text-red-500 hover:bg-red-500/20">Delete Workspace</button>
+               </div>
+            </div>
+          </div>
+        );
+      case "billing":
+        return (
+          <div className="settings-section">
+             <div className="settings-section-header">
+              <h2 className="settings-section-title">Billing & Plan</h2>
+              <p className="settings-item-description">Manage your subscription and usage balance.</p>
+            </div>
+            <div className="settings-plan-card">
+               <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded font-bold uppercase tracking-widest text-white/50">Current Plan</span>
+                    <h3 className="settings-plan-price mt-2 italic">Pro Architect</h3>
+                  </div>
+                  <CreditCard className="text-[#B03052]" />
+               </div>
+               <div className="flex items-baseline gap-1 mt-4">
+                  <span className="text-4xl font-extrabold text-white">$49</span>
+                  <span className="text-[#6B7280]">/ month</span>
+               </div>
+               <div className="mt-6 flex gap-2">
+                  <button className="settings-button settings-button-primary">Manage Sync</button>
+                  <button className="settings-button">Usage Insights</button>
+               </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className="h-screen bg-[#0B0B10] flex flex-col overflow-hidden">
       <Navbar />
 
-      <div className="flex-1 overflow-y-auto">
-        <div className="max-w-4xl mx-auto p-8 space-y-8">
-          {/* Header */}
-          <div>
-            <h1 className="text-3xl font-bold text-[#F5F5F7] mb-2">Settings</h1>
-            <p className="text-[#9CA3AF]">Manage your account and API integrations</p>
-          </div>
-
-          {/* API Keys Section */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-6">
-            <div className="flex items-center gap-3 pb-4 border-b border-[rgba(176,48,82,0.15)]">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center">
-                <Key className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-[#F5F5F7]">API Keys</h2>
-                <p className="text-sm text-[#9CA3AF]">Configure your AI service credentials</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div>
-                <label className="text-sm font-medium text-[#F5F5F7] mb-2 block">
-                  Deepgram API Key
-                </label>
-                <Input
-                  type="password"
-                  placeholder="sk-deepgram-••••••••••••••••"
-                  className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] placeholder:text-[#9CA3AF] focus:border-[#B03052]"
-                />
-                <p className="text-xs text-[#9CA3AF] mt-2">
-                  Used for voice transcription services
-                </p>
-              </div>
-
-              <div>
-                <label className="text-sm font-medium text-[#F5F5F7] mb-2 block">
-                  Grok API Key
-                </label>
-                <Input
-                  type="password"
-                  placeholder="xai-••••••••••••••••••••••••"
-                  className="bg-[#1A1A24] border-[rgba(176,48,82,0.2)] text-[#F5F5F7] placeholder:text-[#9CA3AF] focus:border-[#B03052]"
-                />
-                <p className="text-xs text-[#9CA3AF] mt-2">
-                  Used for AI processing and analysis
-                </p>
-              </div>
-            </div>
-
-            <Button className="bg-[#B03052] hover:bg-[#8f2642] text-white rounded-lg transition-all duration-200">
-              Save API Keys
-            </Button>
-          </Card>
-
-          {/* Preferences Section */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-6">
-            <div className="flex items-center gap-3 pb-4 border-b border-[rgba(176,48,82,0.15)]">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center">
-                <Palette className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-[#F5F5F7]">Preferences</h2>
-                <p className="text-sm text-[#9CA3AF]">Customize your experience</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">Auto-save workflows</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Automatically save changes as you work</div>
+      <div className="settings-container">
+        {/* Sidebar */}
+        <aside className="settings-sidebar">
+           <div className="settings-nav-group">
+              <h3 className="settings-nav-title">Personal Center</h3>
+              {navItems.slice(0, 1).map(item => (
+                <div 
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`settings-nav-item ${activeTab === item.id ? 'settings-nav-item-active' : ''}`}
+                >
+                  {item.icon} {item.label}
                 </div>
-                <Switch defaultChecked />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">Show grid</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Display grid on workflow canvas</div>
+              ))}
+           </div>
+           
+           <div className="settings-nav-group">
+              <h3 className="settings-nav-title">Studio Core</h3>
+              {navItems.slice(1, 3).map(item => (
+                <div 
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`settings-nav-item ${activeTab === item.id ? 'settings-nav-item-active' : ''}`}
+                >
+                  {item.icon} {item.label}
                 </div>
-                <Switch defaultChecked />
-              </div>
+              ))}
+           </div>
 
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">Snap to grid</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Align nodes to grid automatically</div>
+           <div className="settings-nav-group">
+              <h3 className="settings-nav-title">Security & Billing</h3>
+              {navItems.slice(3, 5).map(item => (
+                <div 
+                  key={item.id}
+                  onClick={() => setActiveTab(item.id)}
+                  className={`settings-nav-item ${activeTab === item.id ? 'settings-nav-item-active' : ''}`}
+                >
+                  {item.icon} {item.label}
                 </div>
-                <Switch />
-              </div>
-            </div>
-          </Card>
+              ))}
+           </div>
+        </aside>
 
-          {/* Notifications Section */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-6">
-            <div className="flex items-center gap-3 pb-4 border-b border-[rgba(176,48,82,0.15)]">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center">
-                <Bell className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-[#F5F5F7]">Notifications</h2>
-                <p className="text-sm text-[#9CA3AF]">Manage notification preferences</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">Workflow completion</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Get notified when workflows finish</div>
-                </div>
-                <Switch defaultChecked />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">API balance alerts</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Alert when balance is low</div>
-                </div>
-                <Switch defaultChecked />
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="text-sm font-medium text-[#F5F5F7]">Error notifications</div>
-                  <div className="text-xs text-[#9CA3AF] mt-1">Notify about workflow errors</div>
-                </div>
-                <Switch defaultChecked />
-              </div>
-            </div>
-          </Card>
-
-          {/* Security Section */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-6">
-            <div className="flex items-center gap-3 pb-4 border-b border-[rgba(176,48,82,0.15)]">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <h2 className="text-lg font-semibold text-[#F5F5F7]">Security</h2>
-                <p className="text-sm text-[#9CA3AF]">Manage security settings</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <Button
-                variant="outline"
-                className="w-full justify-start bg-[#1A1A24] border-[rgba(176,48,82,0.2)] hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.4)] text-[#F5F5F7]"
-              >
-                Change Password
-              </Button>
-              <Button
-                variant="outline"
-                className="w-full justify-start bg-[#1A1A24] border-[rgba(176,48,82,0.2)] hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.4)] text-[#F5F5F7]"
-              >
-                Enable Two-Factor Authentication
-              </Button>
-              <Button
-                variant="outline"
-                className="w-full justify-start bg-[#1A1A24] border-[rgba(176,48,82,0.2)] hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.4)] text-[#F5F5F7]"
-              >
-                View Active Sessions
-              </Button>
-            </div>
-          </Card>
-
-          {/* Danger Zone */}
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-6 rounded-2xl space-y-4">
-            <div>
-              <h3 className="text-sm font-semibold text-[#F5F5F7] mb-1">Danger Zone</h3>
-              <p className="text-xs text-[#9CA3AF]">Irreversible actions</p>
-            </div>
-            <Button
-              variant="destructive"
-              className="bg-[#d4183d]/20 hover:bg-[#d4183d]/30 text-[#d4183d] border border-[#d4183d]/30"
-            >
-              Delete Account
-            </Button>
-          </Card>
-        </div>
+        {/* Main Content */}
+        <main className="settings-main">
+           <header className="settings-header">
+              <h1 className="settings-title">
+                {navItems.find(i => i.id === activeTab)?.label}
+              </h1>
+              <p className="text-[#9CA3AF] text-sm">Configure your VocalFlow workspace environment and identity.</p>
+           </header>
+           
+           <div className="max-w-3xl">
+              {renderContent()}
+           </div>
+        </main>
       </div>
     </div>
   );
