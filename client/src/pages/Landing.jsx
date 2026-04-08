@@ -395,36 +395,39 @@ export default function Landing() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32">
-        <h2 className="text-5xl font-bold text-center mb-6">
-          Trusted by <span className="bg-gradient-to-r from-[#B03052] to-[#D76C82] bg-clip-text text-transparent">Voice Engineers</span>
-        </h2>
-        <p className="text-xl text-[#9CA3AF] text-center mb-20 max-w-2xl mx-auto">
-          See what builders are saying about VocalFlow Clone
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="testimonials-section">
+        <div className="testimonials-header">
+          <h2>
+            Trusted by <span>Voice Engineers</span>
+          </h2>
+          <p>
+            See what builders are saying about VocalFlow Clone
+          </p>
+        </div>
+
+        <div className="testimonials-container">
           {[
             { name: "Sarah Chen", role: "AI Engineer", quote: "VocalFlow Clone transformed how we build voice apps. Ship 10x faster.", avatar: "SC" },
             { name: "Marcus Webb", role: "Product Lead", quote: "The visual workflow builder is incredibly intuitive. Our entire team uses it.", avatar: "MW" },
             { name: "Lisa Kumar", role: "CTO", quote: "Best voice processing tool we've used. Production-ready from day one.", avatar: "LK" }
           ].map((testimonial, i) => (
-            <Card key={i} className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.4)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(176,48,82,0.2)] group hover:scale-105">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/0 to-[#B03052]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+            <div key={i} className="testimonial-card group">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative">
-                <p className="text-[#9CA3AF] mb-8 italic text-lg leading-relaxed">
+                <p className="testimonial-text">
                   "{testimonial.quote}"
                 </p>
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-full flex items-center justify-center shadow-lg shadow-[rgba(176,48,82,0.3)] group-hover:shadow-xl group-hover:shadow-[rgba(176,48,82,0.5)] transition-all duration-300">
-                    <span className="text-white font-bold text-lg">{testimonial.avatar}</span>
+                <div className="testimonial-user">
+                  <div className="avatar">
+                    <span>{testimonial.avatar}</span>
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">{testimonial.name}</div>
-                    <div className="text-sm text-[#9CA3AF]">{testimonial.role}</div>
+                    <div className="user-name">{testimonial.name}</div>
+                    <div className="user-role">{testimonial.role}</div>
                   </div>
                 </div>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </section>

@@ -1,32 +1,35 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Settings, User, LayoutDashboard, History, FileText, Mic, Beaker } from "lucide-react";
 import Badge from "../common/Badge";
-import Button from "../common/Button";
+import { HoverButton } from "../common/HoverEffects";
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const isLanding = location.pathname === "/";
 
   return (
-    <nav className="h-20 bg-black/80 backdrop-blur-md border-[rgba(176,48,82,0.1)] px-8 flex items-center justify-between sticky top-0 z-50">
+    <nav className="h-20 bg-black/80 backdrop-blur-md border-b border-[rgba(176,48,82,0.1)] px-8 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(176,48,82,0.3)] transition-transform group-hover:scale-105">
+          <div className="w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(176,48,82,0.3)] transition-transform group-hover:scale-110">
             <Mic className="w-5 h-5 text-white" fill="currentColor" />
           </div>
-          <span className="font-bold text-[#F5F5F7] text-xl tracking-tight">VocalFlow Clone</span>
+          <span className="font-bold text-[#F5F5F7] text-xl tracking-tight">VocalFlow</span>
         </Link>
       </div>
 
-      <div className="flex items-center gap-8">
-        <Link to="/login" className="text-[#9CA3AF] hover:text-[#B03052] font-semibold transition-colors text-sm tracking-wide">
-          Sign In
+      <div className="flex items-center gap-6">
+        <Link to="/login">
+          <HoverButton variant="ghost" className="text-sm px-4 py-2 hover:bg-white/5">
+            Sign In
+          </HoverButton>
         </Link>
         <Link to="/signup">
-          <Button className="bg-[#B03052] hover:bg-[#D76C82] text-white rounded-full px-8 py-2.5 font-bold transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.2)] hover:shadow-[rgba(176,48,82,0.4)] active:scale-95 border-none">
+          <HoverButton className="text-sm font-bold shadow-lg shadow-[rgba(176,48,82,0.3)]">
             Get Started
-          </Button>
+          </HoverButton>
         </Link>
       </div>
     </nav>
