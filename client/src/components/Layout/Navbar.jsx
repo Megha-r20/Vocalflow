@@ -45,7 +45,7 @@ export default function Navbar() {
           <NavLink to="/templates" icon={<FileText size={16} />} label="Templates" />
           <NavLink to="/history" icon={<History size={16} />} label="History" />
           <NavLink to="/recorder" icon={<Mic size={16} />} label="Recorder" />
-          <NavLink to="/flow-builder" icon={<Beaker size={16} />} label="Playground" />
+          <NavLink to="/playground" icon={<Beaker size={16} />} label="Playground" />
         </div>
       )}
 

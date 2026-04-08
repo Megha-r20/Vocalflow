@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Templates from './pages/Templates';
+import Playground from './pages/Playground';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -100,6 +101,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Templates />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/playground" 
+            element={
+              <ProtectedRoute>
+                <Playground />
               </ProtectedRoute>
             } 
           />
