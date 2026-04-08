@@ -52,10 +52,11 @@ export default function Recorder() {
   ];
 
   return (
-    <div className="recorder-container dashboard-animate-in">
+    <div className="h-screen flex flex-col overflow-hidden dashboard-animate-in">
       <Navbar />
 
-      <div className="max-w-5xl mx-auto space-y-8 relative z-10">
+      <div className="flex-1 overflow-y-auto custom-scrollbar pt-10 pb-20">
+        <div className="max-w-5xl mx-auto space-y-8 relative z-10">
         {/* Header */}
         <div className="recorder-header">
           <h1 className="recorder-title">Voice Studio</h1>
@@ -178,6 +179,7 @@ export default function Recorder() {
               </div>
            </div>
 
+        </div>
         </div>
       </div>
     </div>

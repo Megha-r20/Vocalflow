@@ -17,8 +17,10 @@ export default function Profile() {
   ];
 
   return (
-    <div className="profile-container dashboard-animate-in">
+    <div className="profile-wrapper dashboard-animate-in">
       <Navbar />
+
+      <div className="profile-container custom-scrollbar">
 
       <div className="profile-grid">
         {/* Left Sidebar: Identity */}
@@ -161,5 +163,6 @@ export default function Profile() {
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 }

@@ -2,10 +2,18 @@
 
 /* ==================== PROFILE LAYOUT ==================== */
 
-.profile-container {
+.profile-wrapper {
   background: #0B0B10;
-  min-height: 100vh;
-  padding: 32px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.profile-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 40px 32px;
 }
 
 .profile-grid {
@@ -15,6 +23,26 @@
   max-width: 1400px;
   margin: 0 auto;
 }
+
+/* ==================== RESPONSIVE ==================== */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(176, 48, 82, 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(176, 48, 82, 0.3);
+}
+
 
 /* ==================== PROFILE SIDEBAR ==================== */
 

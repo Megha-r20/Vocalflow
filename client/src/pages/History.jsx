@@ -35,10 +35,11 @@ export default function History() {
   });
 
   return (
-    <div className="history-container dashboard-animate-in">
+    <div className="h-screen flex flex-col overflow-hidden dashboard-animate-in">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto p-8 space-y-8">
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="max-w-7xl mx-auto p-8 space-y-8">
         {/* Header */}
         <div className="history-header">
           <div>
@@ -139,6 +140,7 @@ export default function History() {
                 )}
               </div>
            </div>
+        </div>
         </div>
       </div>
     </div>

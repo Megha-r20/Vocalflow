@@ -8,10 +8,11 @@ import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard-container dashboard-animate-in">
+    <div className="h-screen flex flex-col overflow-hidden dashboard-animate-in">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto p-8 space-y-10">
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="max-w-7xl mx-auto p-8 space-y-10">
         {/* Header Section */}
         <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-white/5">
           <div className="space-y-1">
@@ -125,6 +126,7 @@ export default function Dashboard() {
             ))}
           </div>
         </Card>
+        </div>
       </div>
     </div>
   );
