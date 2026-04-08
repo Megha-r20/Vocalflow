@@ -63,9 +63,13 @@ export default function Navbar() {
             </div>
             
             <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">
-              <button className="w-9 h-9 flex items-center justify-center rounded-lg text-[#9CA3AF] hover:bg-white/5 hover:text-[#F5F5F7] transition-all">
+              <Link 
+                to="/settings"
+                className="w-9 h-9 flex items-center justify-center rounded-lg text-[#9CA3AF] hover:bg-white/5 hover:text-[#F5F5F7] transition-all"
+                title="Settings"
+              >
                 <Settings size={18} />
-              </button>
+              </Link>
               <button 
                 onClick={handleLogout}
                 className="w-9 h-9 bg-gradient-to-br from-[#B03052] to-[#D76C82] flex items-center justify-center rounded-lg text-white shadow-lg shadow-[rgba(176,48,82,0.2)] transition-transform hover:scale-105"
