@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../components/common/Button';
 import Input from '../components/common/Input';
 import Card from '../components/common/Card';
-import { Mail, Lock, User as UserIcon, Github } from 'lucide-react';
+import { Mail, Lock, User as UserIcon } from 'lucide-react';
 
 import './Auth.css';
 
@@ -32,7 +32,7 @@ export const Login = () => {
         </div>
 
         <div className="social-auth">
-          <Button variant="secondary" style={{ width: '100%', icon: Github }}>GitHub</Button>
+          <Button variant="secondary" style={{ width: '100%', icon: UserIcon }}>GitHub</Button>
         </div>
 
         <p className="auth-footer">
@@ -66,7 +66,7 @@ export const Signup = () => {
         </div>
 
         <div className="social-auth">
-          <Button variant="secondary" style={{ width: '100%', icon: Github }}>GitHub</Button>
+          <Button variant="secondary" style={{ width: '100%', icon: UserIcon }}>GitHub</Button>
         </div>
 
         <p className="auth-footer">

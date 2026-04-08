@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/layout/Navbar";
-import { User, Mail, Calendar, Camera, Github, Twitter, Linkedin, Zap, TrendingUp, Award, Clock, ChevronRight } from "lucide-react";
+import { User, Mail, Calendar, Camera, Zap, TrendingUp, Award, Clock, ChevronRight, Share2 } from "lucide-react";
 import "./Profile.css";
 
 export default function Profile() {
@@ -59,9 +59,8 @@ export default function Profile() {
             </div>
 
             <div className="mt-6 flex justify-center gap-4">
-               <button className="text-[#6B7280] hover:text-[#D76C82] transition-colors"><Github size={20} /></button>
-               <button className="text-[#6B7280] hover:text-[#D76C82] transition-colors"><Twitter size={20} /></button>
-               <button className="text-[#6B7280] hover:text-[#D76C82] transition-colors"><Linkedin size={20} /></button>
+               <button className="text-[#6B7280] hover:text-[#D76C82] transition-colors"><Share2 size={20} /></button>
+               <button className="text-[#6B7280] hover:text-[#D76C82] transition-colors"><User size={20} /></button>
             </div>
           </div>
 
