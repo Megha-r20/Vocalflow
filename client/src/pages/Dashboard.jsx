@@ -11,18 +11,24 @@ export default function Dashboard() {
     <div className="dashboard-container dashboard-animate-in">
       <Navbar />
 
-      <div className="max-w-7xl mx-auto p-8 space-y-8">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <div>
-            <h1 className="dashboard-title mb-2">Dashboard</h1>
-            <p className="dashboard-stat-label">Welcome back! Here's your workflow overview</p>
+      <div className="max-w-7xl mx-auto p-8 space-y-10">
+        {/* Header Section */}
+        <div className="relative flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2 border-b border-white/5">
+          <div className="space-y-1">
+            <h1 className="text-4xl font-bold text-white tracking-tight">
+              Dashboard
+            </h1>
+            <p className="text-[#9CA3AF] text-base font-medium">
+              Welcome back! <span className="text-[#B03052]/80">Here's your recruitment workflow overview</span>
+            </p>
           </div>
+          
           <Link to="/recorder">
-            <Button className="bg-[#B03052] hover:bg-[#8f2642] text-white rounded-lg transition-all duration-200 flex items-center gap-2">
-              <Plus className="w-4 h-4" />
-              Create Workflow
-            </Button>
+            <button className="group relative flex items-center gap-2.5 px-6 py-3.5 bg-[#B03052] text-white rounded-xl font-bold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(176,48,82,0.3)] hover:shadow-[0_0_30px_rgba(176,48,82,0.5)] overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <Plus className="w-5 h-5 group-hover:rotate-90 transition-transform duration-300" />
+              <span>Create Workflow</span>
+            </button>
           </Link>
         </div>
 
