@@ -1,23 +1,44 @@
-import { balanceService } from '../services/balanceService.js';
+import User from '../models/User.js';
 
-export const getBalance = async (req, res) => {
+export const getBalance = async (req, res, next) => {
   try {
-    // In a real app, email would come from auth middleware (req.user.email)
-    const email = "user@example.com"; 
-    const data = await balanceService.getBalance(email);
-    res.json(data);
+    // req.user is populated by protect middleware
+    const user = await User.findById(req.user.id);
+    
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
+    }
+
+    res.json({
+      credits: user.credits,
+      usage: user.usage
+    });
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch balance data" });
+    next(error);
   }
 };
 
-export const updateBalance = async (req, res) => {
-    try {
-      const { amount } = req.body;
-      const email = "user@example.com";
-      await balanceService.deductCredits(email, amount);
-      res.json({ success: true });
-    } catch (error) {
-      res.status(500).json({ error: "Failed to update balance" });
+export const updateBalance = async (req, res, next) => {
+  try {
+    const { amount, service } = req.body;
+    
+    const update = { $inc: { credits: -amount } };
+    if (service) {
+      update.$inc[`usage.${service}`] = amount;
     }
+
+    const user = await User.findByIdAndUpdate(
+      req.user.id,
+      update,
+      { new: true, runValidators: true }
+    );
+
+    res.json({
+      success: true,
+      credits: user.credits,
+      usage: user.usage
+    });
+  } catch (error) {
+    next(error);
+  }
 };
