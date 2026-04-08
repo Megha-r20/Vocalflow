@@ -5,6 +5,7 @@ import Button from "../components/common/Button";
 import Card from "../components/common/Card";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import "./Landing.css";
 
 export default function Landing() {
   const navigate = useNavigate();
@@ -78,10 +79,7 @@ export default function Landing() {
       </section>
 
       {/* How It Works Section */}
-      <section className="relative z-10 py-32 overflow-hidden bg-gradient-to-b from-[#1a0b12] to-black">
-        {/* Central Radial Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#B03052]/10 blur-[120px] pointer-events-none"></div>
-
+      <section className="how-it-works">
         <div className="max-w-7xl mx-auto px-8 relative">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-white">
@@ -92,74 +90,38 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 relative">
-            {/* Connecting Lines (Desktop Only) */}
-            <div className="hidden lg:block absolute top-[140px] left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(255,80,120,0.2)] to-transparent z-0"></div>
-
+          <div className="steps-container">
             {/* Step 1 */}
-            <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative">
-                  {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
-                    1
-                  </div>
-                  
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
-                    <Mic className="w-10 h-10 text-white" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-5 text-center text-white">Voice Input</h3>
-                  <p className="text-[#aaa] text-center leading-relaxed">
-                    Connect your audio source or microphone. Support for real-time streaming and file uploads.
-                  </p>
-                </div>
-              </Card>
+            <div className="step-card" data-step="1">
+              <div className="step-icon-wrapper">
+                <Mic className="step-icon" />
+              </div>
+              <h3 className="step-title">Voice Input</h3>
+              <p className="step-desc">
+                Connect your audio source or microphone. Support for real-time streaming and file uploads.
+              </p>
             </div>
 
             {/* Step 2 */}
-            <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative">
-                  {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#D76C82] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
-                    2
-                  </div>
-                  
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#D76C82] to-[#B03052] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
-                    <Brain className="w-10 h-10 text-white" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-5 text-center text-white">AI Processing</h3>
-                  <p className="text-[#aaa] text-center leading-relaxed">
-                    Apply AI models with drag-and-drop nodes. Transcribe, analyze, enhance, and transform instantly.
-                  </p>
-                </div>
-              </Card>
+            <div className="step-card" data-step="2">
+              <div className="step-icon-wrapper">
+                <Brain className="step-icon" />
+              </div>
+              <h3 className="step-title">AI Processing</h3>
+              <p className="step-desc">
+                Apply AI models with drag-and-drop nodes. Transcribe, analyze, enhance, and transform instantly.
+              </p>
             </div>
 
             {/* Step 3 */}
-            <div className="relative group z-10">
-              <Card className="bg-[#0B0B13] border border-[rgba(255,80,120,0.2)] p-12 rounded-[20px] backdrop-blur-sm hover:border-[rgba(255,80,120,0.5)] shadow-[0_0_30px_rgba(255,80,120,0.15)] hover:shadow-[0_0_50px_rgba(255,80,120,0.3)] hover:scale-105 hover:-translate-y-2 transition-all duration-300 h-full relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative">
-                  {/* Step Badge */}
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-[0_0_15px_rgba(255,80,120,0.5)] animate-pulse z-20">
-                    3
-                  </div>
-                  
-                  <div className="w-24 h-24 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-3xl flex items-center justify-center mb-10 shadow-[0_0_25px_rgba(255,80,120,0.4)] group-hover:shadow-[0_0_40px_rgba(255,80,120,0.6)] transition-all duration-300 mx-auto">
-                    <FileOutput className="w-10 h-10 text-white" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-5 text-center text-white">Smart Output</h3>
-                  <p className="text-[#aaa] text-center leading-relaxed">
-                    Export results in any format. Deploy to production with one click. Scale instantly.
-                  </p>
-                </div>
-              </Card>
+            <div className="step-card" data-step="3">
+              <div className="step-icon-wrapper">
+                <FileOutput className="step-icon" />
+              </div>
+              <h3 className="step-title">Smart Output</h3>
+              <p className="step-desc">
+                Export results in any format. Deploy to production with one click. Scale instantly.
+              </p>
             </div>
           </div>
         </div>
