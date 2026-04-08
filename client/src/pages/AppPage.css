@@ -25,15 +25,14 @@
 
 .app-node {
   position: absolute;
-  min-width: 220px;
-  background: rgba(18, 18, 26, 0.95);
-  border: 1px solid rgba(176, 48, 82, 0.2);
-  border-radius: 16px;
+  min-width: 180px;
+  background: rgba(18, 18, 26, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
   backdrop-filter: blur(20px);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.4),
-    0 2px 8px rgba(176, 48, 82, 0.1);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: move;
   z-index: 10;
 }
@@ -57,20 +56,20 @@
 .app-node-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid rgba(176, 48, 82, 0.1);
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 .app-node-icon {
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #B03052, #D76C82);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(176, 48, 82, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(176, 48, 82, 0.2);
   transition: all 0.3s ease;
   color: white;
 }
@@ -81,10 +80,10 @@
 }
 
 .app-node-body {
-  padding: 16px;
-  font-size: 13px;
+  padding: 12px;
+  font-size: 11px;
   color: #9CA3AF;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* Node Type Variants */
@@ -167,9 +166,9 @@
 /* ==================== SIDEBAR ==================== */
 
 .app-sidebar {
-  width: 280px;
-  background: rgba(18, 18, 26, 0.98);
-  border-right: 1px solid rgba(176, 48, 82, 0.15);
+  width: 230px;
+  background: rgba(18, 18, 26, 0.4);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -229,9 +228,9 @@
 /* ==================== RIGHT PANEL ==================== */
 
 .app-right-panel {
-  width: 320px;
-  background: rgba(18, 18, 26, 0.98);
-  border-left: 1px solid rgba(176, 48, 82, 0.15);
+  width: 260px;
+  background: rgba(18, 18, 26, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;

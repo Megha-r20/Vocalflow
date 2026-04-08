@@ -12,14 +12,14 @@ export default function OutputPanel({ selectedNode }) {
           onClick={() => setActiveTab("settings")}
           className={`app-panel-tab ${activeTab === "settings" ? "app-panel-tab-active" : ""}`}
         >
-          <Settings size={14} className="inline mr-2" />
+          <Settings size={12} className="inline mr-1.5" />
           Settings
         </button>
         <button 
           onClick={() => setActiveTab("output")}
           className={`app-panel-tab ${activeTab === "output" ? "app-panel-tab-active" : ""}`}
         >
-          <Terminal size={14} className="inline mr-2" />
+          <Terminal size={12} className="inline mr-1.5" />
           Output
         </button>
       </div>
@@ -76,9 +76,10 @@ export default function OutputPanel({ selectedNode }) {
       </div>
 
       {/* Footer Action */}
-      <div className="p-4 border-top border-white/5">
-        <button className="w-full bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:scale-[1.02] transition-transform text-white font-bold py-3 rounded-xl shadow-lg shadow-[rgba(176,48,82,0.2)] flex items-center justify-center gap-2">
-           <Play size={16} /> Run Workflow
+      <div className="p-3 border-t border-white/5 bg-black/20">
+        <button className="w-full bg-[#B03052] hover:bg-[#D76C82] hover:shadow-[0_0_20px_rgba(176,48,82,0.4)] transition-all text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 group text-sm">
+           <Play size={14} className="group-hover:translate-x-0.5 transition-transform" /> 
+           <span>Run Workflow</span>
         </button>
       </div>
     </aside>

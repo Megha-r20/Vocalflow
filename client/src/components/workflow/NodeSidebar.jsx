@@ -37,8 +37,8 @@ export default function NodeSidebar() {
   return (
     <aside className="app-sidebar">
       <div className="app-sidebar-header">
-        <h2 className="text-[#F5F5F7] font-bold text-lg">Node Library</h2>
-        <p className="text-xs text-[#6B7280] mt-1">Drag and drop to build</p>
+        <h2 className="text-[#F5F5F7] font-bold text-base">Node Library</h2>
+        <p className="text-[10px] text-[#6B7280] mt-0.5">Drag and drop to build</p>
       </div>
 
       <div className="app-sidebar-section">
@@ -57,8 +57,8 @@ export default function NodeSidebar() {
                     <node.icon size={16} />
                   </div>
                   <div className="flex-1">
-                    <div className="text-sm font-semibold text-[#F5F5F7]">{node.label}</div>
-                    <div className="text-[10px] text-[#6B7280] leading-tight">{node.description}</div>
+                    <div className="text-xs font-semibold text-[#F5F5F7]">{node.label}</div>
+                    <div className="text-[9px] text-[#6B7280] leading-tight">{node.description}</div>
                   </div>
                 </div>
               ))}
