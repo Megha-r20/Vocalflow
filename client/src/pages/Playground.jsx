@@ -42,7 +42,9 @@ export default function Playground() {
   };
 
   return (
-    <div className="playground-container dashboard-animate-in">
+    <div className="playground-wrapper dashboard-animate-in">
+      <Navbar />
+      <div className="playground-container">
       {/* Sidebar: Models & Parameters */}
       <aside className="playground-sidebar">
         <div className="playground-sidebar-header">
@@ -99,7 +101,6 @@ export default function Playground() {
 
       {/* Main: Prompt Editor */}
       <main className="playground-main">
-        <Navbar />
         <div className="playground-editor-header">
            <h2 className="playground-editor-title">Prompt Engineering</h2>
            <div className="flex gap-3">
@@ -178,6 +179,7 @@ export default function Playground() {
             )}
          </div>
       </section>
+      </div>
     </div>
   );
 }
