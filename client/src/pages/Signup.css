@@ -16,6 +16,20 @@
   border-radius: 50%;
   filter: blur(120px);
   opacity: 0.2;
+  animation: bloom 10s infinite ease-in-out;
+}
+
+@keyframes bloom {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+    filter: blur(120px);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.15);
+    filter: blur(150px);
+  }
 }
 
 .glow-1 {
@@ -32,6 +46,7 @@
   background: #D76C82;
   bottom: 10%;
   right: 10%;
+  animation-delay: 2s;
 }
 
 /* CONTAINER */
