@@ -2,8 +2,8 @@
 .how-it-works {
   padding: 120px 0;
   position: relative;
-  background: radial-gradient(circle at center, rgba(215,108,130,0.12), transparent 60%),
-              linear-gradient(to bottom, #1a0b12, #000000);
+  background: radial-gradient(circle at center, rgba(215,108,130,0.2), transparent 70%),
+              linear-gradient(to bottom, rgba(26, 11, 18, 0.8), rgba(0, 0, 0, 0.9));
   overflow: hidden;
 }
 

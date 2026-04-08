@@ -13,9 +13,9 @@ export default function Landing() {
   return (
     <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden">
       {/* Animated Background - Extremely Subtle */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-[500px] h-[500px] bg-[#B03052] rounded-full blur-[200px] opacity-5 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-[600px] h-[600px] bg-[#D76C82] rounded-full blur-[250px] opacity-5 animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-[#B03052] rounded-full blur-[200px] opacity-15 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-[800px] h-[800px] bg-[#D76C82] rounded-full blur-[250px] opacity-15 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <Navbar />
