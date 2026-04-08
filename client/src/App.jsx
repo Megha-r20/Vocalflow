@@ -38,15 +38,6 @@ function App() {
     <AuthProvider>
       <Router>
         <Routes>
-          <Route 
-            path="/profile" 
-            element={
-              <div style={{color: 'white', padding: '100px', background: 'blue'}}>
-                <h1>PROFILE ROUTE MATCHED</h1>
-                <p>Path: {window.location.pathname}</p>
-              </div>
-            } 
-          />
           <Route path="/" element={<Landing />} />
           <Route 
             path="/login" 
@@ -119,6 +110,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Playground />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/profile" 
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             } 
           />
