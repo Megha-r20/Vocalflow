@@ -459,6 +459,7 @@
 .who-uses-header h2 span {
   background: linear-gradient(90deg, #B03052, #D76C82);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
