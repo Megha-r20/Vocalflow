@@ -25,7 +25,7 @@ export default function Landing() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-40 text-center">
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-24 text-center">
         {/* Large Static Plum Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#B03052]/20 blur-[150px] pointer-events-none z-0"></div>
         
@@ -35,32 +35,32 @@ export default function Landing() {
             <span className="text-sm text-[#9CA3AF] font-medium tracking-wide">AI-Powered Voice Workflows</span>
           </div>
 
-          <h1 className="text-7xl md:text-8xl font-bold mb-10 leading-[1.1] tracking-tight text-white">
+          <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-white">
             Build AI Voice Workflows
             <br />
             <span className="text-[#B03052]">Visually</span>
           </h1>
 
-          <div className="max-w-3xl mx-auto space-y-4 mb-16">
-            <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
+          <div className="max-w-3xl mx-auto space-y-4 mb-12">
+            <p className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed">
               Design, connect, and deploy intelligent voice pipelines with our no-code <br className="hidden md:block" /> visual builder.
             </p>
-            <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
+            <p className="text-lg md:text-xl text-[#9CA3AF] leading-relaxed">
               Just drag, drop, and ship.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 justify-center">
+          <div className="flex flex-wrap items-center gap-4 justify-center">
             <HoverButton
               onClick={() => navigate('/signup')}
-              className="px-10 py-7 text-xl rounded-2xl flex items-center gap-3 font-bold shadow-[0_0_30px_rgba(176,48,82,0.4)]"
+              className="px-8 py-4 text-base rounded-xl flex items-center gap-2 font-bold shadow-[0_0_20px_rgba(176,48,82,0.3)]"
             >
               Get Started Free
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-5 h-5" />
             </HoverButton>
             <HoverButton
               variant="secondary"
-              className="px-10 py-7 text-xl rounded-2xl font-bold bg-[#12121A]/80 backdrop-blur-md border-[rgba(255,255,255,0.1)]"
+              className="px-8 py-4 text-base rounded-xl font-bold bg-[#12121A]/80 backdrop-blur-md border-[rgba(255,255,255,0.1)]"
             >
               View Demo
             </HoverButton>
@@ -278,7 +278,7 @@ export default function Landing() {
       </section>
 
       {/* Interactive Demo Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32">
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-20">
         <div className="relative">
           {/* Glow Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/20 via-[#D76C82]/10 to-transparent rounded-3xl blur-3xl"></div>
@@ -300,8 +300,8 @@ export default function Landing() {
               </p>
 
               {/* Mock Canvas Preview */}
-              <div className="max-w-5xl mx-auto mb-12">
-                <div className="relative bg-gradient-to-br from-[#1A1A24] to-[#12121A] rounded-2xl p-12 border border-[rgba(176,48,82,0.2)] shadow-2xl overflow-hidden group">
+              <div className="max-w-5xl mx-auto mb-10">
+                <div className="relative bg-gradient-to-br from-[#1A1A24] to-[#12121A] rounded-2xl p-8 border border-[rgba(176,48,82,0.2)] shadow-2xl overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Simplified Workflow Preview */}
@@ -343,17 +343,17 @@ export default function Landing() {
                 <Button
                   onClick={() => navigate('/app')}
                   size="lg"
-                  className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.5)] text-white px-10 py-7 rounded-xl transition-all duration-300 text-lg group hover:scale-105 font-semibold"
+                  className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.5)] text-white px-8 py-4 rounded-xl transition-all duration-300 text-base group hover:scale-105 font-semibold"
                 >
                   Try Demo Now
-                  <Play className="ml-2 w-5 h-5" />
+                  <Play className="ml-2 w-4 h-4" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-[rgba(176,48,82,0.3)] bg-[#1A1A24] hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.5)] text-[#F5F5F7] px-10 py-7 rounded-xl backdrop-blur-sm text-lg transition-all duration-300 hover:scale-105 font-semibold"
+                  className="border-[rgba(176,48,82,0.3)] bg-[#1A1A24] hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.5)] text-[#F5F5F7] px-8 py-4 rounded-xl backdrop-blur-sm text-base transition-all duration-300 hover:scale-105 font-semibold"
                 >
-                  <FileText className="mr-2 w-5 h-5" />
+                  <FileText className="mr-2 w-4 h-4" />
                   View Documentation
                 </Button>
               </div>
@@ -439,7 +439,7 @@ export default function Landing() {
       </section>
 
       {/* Strong CTA Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32">
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-24">
         <div className="relative">
           {/* Glow Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#B03052]/30 via-[#D76C82]/20 to-[#B03052]/30 rounded-3xl blur-3xl animate-pulse"></div>
@@ -463,21 +463,21 @@ export default function Landing() {
                 Join thousands of developers shipping voice AI products faster with VocalFlow Clone
               </p>
 
-              <div className="flex gap-6 justify-center">
+              <div className="flex gap-4 justify-center">
                 <Button
                   onClick={() => navigate('/app')}
                   size="lg"
-                  className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.6)] text-white px-12 py-8 rounded-xl transition-all duration-300 text-xl group hover:scale-110 font-bold"
+                  className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.6)] text-white px-10 py-6 rounded-xl transition-all duration-300 text-lg group hover:scale-105 font-bold"
                 >
                   Get Started Free
-                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-[rgba(176,48,82,0.4)] bg-transparent hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.6)] text-[#F5F5F7] px-12 py-8 rounded-xl backdrop-blur-sm text-xl transition-all duration-300 hover:scale-110 font-bold"
+                  className="border-2 border-[rgba(176,48,82,0.4)] bg-transparent hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.6)] text-[#F5F5F7] px-10 py-6 rounded-xl backdrop-blur-sm text-lg transition-all duration-300 hover:scale-105 font-bold"
                 >
-                  <Play className="mr-2 w-6 h-6" />
+                  <Play className="mr-2 w-5 h-5" />
                   View Demo
                 </Button>
               </div>

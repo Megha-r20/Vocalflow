@@ -426,7 +426,7 @@
 
 /* WHO USES SECTION */
 .who-uses {
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   background: radial-gradient(circle at center, rgba(215, 108, 130, 0.12), transparent 60%),
     linear-gradient(to bottom, #1a0b12, #000000);
@@ -536,7 +536,7 @@
 
 /* HOW IT WORKS SECTION */
 .how-it-works {
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   background: radial-gradient(circle at center, rgba(215, 108, 130, 0.15), transparent 60%),
     linear-gradient(to bottom, #1a0b12, #000);
@@ -555,8 +555,8 @@
 
 /* 🔥 CARD — MAIN FIX (UPDATED DIMENSIONS) */
 .step-card {
-  width: 340px;
-  padding: 50px 40px;
+  width: 320px;
+  padding: 40px 32px;
   border-radius: 20px;
   position: relative;
   overflow: visible;
@@ -581,9 +581,9 @@
 
 /* 🔥 ICON BOX (MATCH EXACT STYLE) */
 .step-icon-wrapper {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -601,8 +601,8 @@
 /* ICON */
 .step-icon {
   color: white !important;
-  width: 26px !important;
-  height: 26px !important;
+  width: 24px !important;
+  height: 24px !important;
 }
 
 /* STEP NUMBER BADGE */
@@ -645,7 +645,7 @@
 
 /* FEATURES SECTION */
 .features-section {
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at center, rgba(215,108,130,0.15), transparent 60%),
@@ -682,7 +682,7 @@
 .feature-card {
   background: #0b0b13;
   border-radius: 20px;
-  padding: 50px 40px;
+  padding: 40px 32px;
   border: 1px solid rgba(255, 80, 120, 0.2);
   box-shadow:
     0 0 30px rgba(255, 80, 120, 0.15),
@@ -701,15 +701,15 @@
 
 /* ICON BOX */
 .feature-icon {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 18px;
-  margin-bottom: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
   background: linear-gradient(135deg, #B03052, #D76C82);
-  box-shadow: 0 0 30px rgba(255, 80, 120, 0.6);
+  box-shadow: 0 0 25px rgba(255, 80, 120, 0.6);
   transition: all 0.3s ease;
 }
 
@@ -728,7 +728,7 @@
 
 /* TITLE */
 .feature-title {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 14px;
@@ -743,7 +743,7 @@
 
 /* TESTIMONIAL SECTION */
 .testimonials-section {
-  padding: 120px 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
   background: radial-gradient(circle at center, rgba(215,108,130,0.15), transparent 60%),
