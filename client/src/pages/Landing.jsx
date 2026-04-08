@@ -12,52 +12,35 @@ export default function Landing() {
 
   return (
     <div className="min-h-screen bg-black text-[#F5F5F7] overflow-hidden">
-      {/* Animated Background - Extremely Subtle */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-20 left-20 w-[600px] h-[600px] bg-[#B03052] rounded-full blur-[200px] opacity-15 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-[800px] h-[800px] bg-[#D76C82] rounded-full blur-[250px] opacity-15 animate-pulse" style={{ animationDelay: '1s' }}></div>
-      </div>
-
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-32 text-center">
-        <div className="inline-flex items-center gap-2 bg-[#12121A] border border-[rgba(176,48,82,0.2)] px-4 py-2 rounded-full mb-8 backdrop-blur-sm hover:border-[rgba(176,48,82,0.4)] transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.1)]">
-          <Sparkles className="w-4 h-4 text-[#D76C82] animate-pulse" />
-          <span className="text-sm text-[#9CA3AF]">AI-Powered Voice Workflows</span>
+      <section className="relative z-10 max-w-7xl mx-auto px-8 py-40 text-center">
+        {/* Large Static Plum Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-[#B03052]/20 blur-[150px] pointer-events-none z-0"></div>
+        
+        <div className="relative z-10">
+          <div className="inline-flex items-center gap-2 bg-[#0B0B13] border border-[rgba(176,48,82,0.1)] px-5 py-2 rounded-full mb-12 shadow-xl">
+            <Sparkles className="w-4 h-4 text-[#B03052]" />
+            <span className="text-sm text-[#9CA3AF] font-medium tracking-wide">AI-Powered Voice Workflows</span>
+          </div>
+
+          <h1 className="text-7xl md:text-8xl font-bold mb-10 leading-[1.1] tracking-tight text-white">
+            Build AI Voice Workflows
+            <br />
+            <span className="text-[#B03052]">Visually</span>
+          </h1>
+
+          <div className="max-w-3xl mx-auto space-y-4 mb-20">
+            <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
+              Design, connect, and deploy intelligent voice pipelines with our no-code <br className="hidden md:block" /> visual builder.
+            </p>
+            <p className="text-xl md:text-2xl text-[#9CA3AF] leading-relaxed">
+              Just drag, drop, and ship.
+            </p>
+          </div>
         </div>
-
-        <h1 className="text-7xl font-bold mb-8 leading-tight tracking-tight">
-          Build AI Voice Workflows
-          <br />
-          <span className="bg-gradient-to-r from-[#B03052] via-[#D76C82] to-[#B03052] bg-clip-text text-transparent animate-pulse">
-            Visually
-          </span>
-        </h1>
-
-        <p className="text-2xl text-[#9CA3AF] mb-12 max-w-3xl mx-auto leading-relaxed">
-          Design, connect, and deploy intelligent voice pipelines with our no-code visual builder.
-          <br />
-          <span className="text-[#F5F5F7]/80">Just drag, drop, and ship.</span>
-        </p>
-
-        <div className="flex flex-wrap items-center gap-4 justify-center mb-20">
-          <Button
-            onClick={() => navigate('/app')}
-            size="lg"
-            className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:shadow-2xl hover:shadow-[rgba(176,48,82,0.5)] text-white px-10 py-7 rounded-full transition-all duration-300 text-lg group hover:scale-105 font-bold border-none"
-          >
-            Get Started Free
-            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-2 border-[rgba(176,48,82,0.3)] bg-[#12121A]/80 hover:bg-[#1A1A24] hover:border-[rgba(176,48,82,0.5)] text-[#F5F5F7] px-10 py-7 rounded-full backdrop-blur-sm text-lg transition-all duration-300 hover:scale-105 font-bold"
-          >
-            View Demo
-          </Button>
-        </div>
+      </section>
 
         {/* Product Preview */}
         <div className="relative max-w-6xl mx-auto">
@@ -76,7 +59,6 @@ export default function Landing() {
             </div>
           </div>
         </div>
-      </section>
 
       {/* How It Works Section */}
       <section className="how-it-works">

@@ -9,10 +9,10 @@ export default function Navbar() {
   const isLanding = location.pathname === "/";
 
   return (
-    <nav className="h-20 bg-[#0B0B10]/95 backdrop-blur-md border-b border-[rgba(176,48,82,0.1)] px-8 flex items-center justify-between sticky top-0 z-50">
+    <nav className="h-20 bg-black/80 backdrop-blur-md border-[rgba(176,48,82,0.1)] px-8 flex items-center justify-between sticky top-0 z-50">
       <div className="flex items-center">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(176,48,82,0.4)] transition-transform group-hover:scale-105">
+          <div className="w-10 h-10 bg-[#B03052] rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(176,48,82,0.3)] transition-transform group-hover:scale-105">
             <Mic className="w-5 h-5 text-white" fill="currentColor" />
           </div>
           <span className="font-bold text-[#F5F5F7] text-xl tracking-tight">VocalFlow Clone</span>
@@ -20,11 +20,11 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-8">
-        <Link to="/login" className="text-[#F5F5F7] hover:text-[#B03052] font-semibold transition-colors text-sm tracking-wide">
+        <Link to="/login" className="text-[#9CA3AF] hover:text-[#B03052] font-semibold transition-colors text-sm tracking-wide">
           Sign In
         </Link>
         <Link to="/signup">
-          <Button className="bg-gradient-to-r from-[#B03052] to-[#D76C82] hover:from-[#D76C82] hover:to-[#B03052] text-white rounded-full px-8 py-2.5 font-bold transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.3)] hover:shadow-[rgba(176,48,82,0.5)] active:scale-95 border-none">
+          <Button className="bg-[#B03052] hover:bg-[#D76C82] text-white rounded-full px-8 py-2.5 font-bold transition-all duration-300 shadow-lg shadow-[rgba(176,48,82,0.2)] hover:shadow-[rgba(176,48,82,0.4)] active:scale-95 border-none">
             Get Started
           </Button>
         </Link>
