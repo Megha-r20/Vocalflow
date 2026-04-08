@@ -356,38 +356,41 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Features Section (Improved) */}
-      <section className="relative z-10 max-w-7xl mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.4)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(176,48,82,0.2)]">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[rgba(176,48,82,0.3)]">
-              <Mic className="w-6 h-6 text-white" />
+      {/* Features Section */}
+      <section className="features-section">
+        <div className="features-container">
+          {/* Feature 1 */}
+          <div className="feature-card">
+            <div className="feature-icon">
+              <Mic />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Voice Input</h3>
-            <p className="text-[#9CA3AF]">
+            <h3 className="feature-title">Voice Input</h3>
+            <p className="feature-desc">
               Capture and process voice data with advanced AI transcription and analysis.
             </p>
-          </Card>
+          </div>
 
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.4)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(176,48,82,0.2)]">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[rgba(176,48,82,0.3)]">
-              <Zap className="w-6 h-6 text-white" />
+          {/* Feature 2 */}
+          <div className="feature-card">
+            <div className="feature-icon">
+              <Zap />
             </div>
-            <h3 className="text-xl font-semibold mb-3">AI Processing</h3>
-            <p className="text-[#9CA3AF]">
+            <h3 className="feature-title">AI Processing</h3>
+            <p className="feature-desc">
               Transform voice with cutting-edge AI models. Analyze, enhance, and understand.
             </p>
-          </Card>
+          </div>
 
-          <Card className="bg-[#12121A] border-[rgba(176,48,82,0.2)] p-8 rounded-2xl backdrop-blur-sm hover:border-[rgba(176,48,82,0.4)] transition-all duration-300 hover:shadow-lg hover:shadow-[rgba(176,48,82,0.2)]">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#B03052] to-[#D76C82] rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-[rgba(176,48,82,0.3)]">
-              <CheckCircle2 className="w-6 h-6 text-white" />
+          {/* Feature 3 */}
+          <div className="feature-card">
+            <div className="feature-icon">
+              <CheckCircle2 />
             </div>
-            <h3 className="text-xl font-semibold mb-3">Smart Output</h3>
-            <p className="text-[#9CA3AF]">
+            <h3 className="feature-title">Smart Output</h3>
+            <p className="feature-desc">
               Export processed results in any format. Deploy anywhere instantly.
             </p>
-          </Card>
+          </div>
         </div>
       </section>
 

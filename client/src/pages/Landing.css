@@ -600,3 +600,101 @@
   font-size: 1rem;
   text-align: center;
 }
+
+/* FEATURES SECTION */
+.features-section {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(215,108,130,0.15), transparent 60%),
+              linear-gradient(to bottom, #1a0b12, #000);
+}
+
+/* CENTER GLOW */
+.features-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background: rgba(176, 48, 82, 0.12);
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+/* GRID */
+.features-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* CARD */
+.feature-card {
+  background: #0b0b13;
+  border-radius: 20px;
+  padding: 50px 40px;
+  border: 1px solid rgba(255, 80, 120, 0.2);
+  box-shadow:
+    0 0 30px rgba(255, 80, 120, 0.15),
+    inset 0 0 20px rgba(255, 80, 120, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* HOVER EFFECT */
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 80, 120, 0.5);
+  box-shadow:
+    0 0 60px rgba(255, 80, 120, 0.3),
+    inset 0 0 30px rgba(255, 80, 120, 0.1);
+}
+
+/* ICON BOX */
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #B03052, #D76C82);
+  box-shadow: 0 0 30px rgba(255, 80, 120, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* ICON HOVER */
+.feature-card:hover .feature-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(255, 80, 120, 0.9);
+}
+
+/* ICON SVG */
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+  color: #fff !important;
+}
+
+/* TITLE */
+.feature-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+/* DESCRIPTION */
+.feature-desc {
+  color: #a1a1aa;
+  font-size: 1rem;
+  line-height: 1.6;
+}
