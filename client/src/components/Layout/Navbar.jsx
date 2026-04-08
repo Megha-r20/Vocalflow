@@ -53,13 +53,17 @@ export default function Navbar() {
       <div className="flex items-center gap-4">
         {isLoggedIn ? (
           <>
-            <div className="hidden md:flex items-center gap-2">
-              <Badge variant="default" className="bg-[#12121A] border-white/10 text-xs py-1 px-3">
-                Deepgram <span className="text-[#F5F5F7] font-bold ml-1">$24.50</span>
-              </Badge>
-              <Badge variant="default" className="bg-[#12121A] border-white/10 text-xs py-1 px-3">
-                Grok <span className="text-[#F5F5F7] font-bold ml-1">$18.30</span>
-              </Badge>
+            <div className="hidden md:flex items-center gap-3">
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#12121A]/80 border border-white/5 rounded-full shadow-inner shadow-white/5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#B03052] shadow-[0_0_8px_rgba(176,48,82,0.8)] animate-pulse"></div>
+                <span className="text-[10px] text-[#9CA3AF] font-bold tracking-widest uppercase">Deepgram</span>
+                <span className="text-xs text-[#F5F5F7] font-mono ml-1">$24.50</span>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 bg-[#12121A]/80 border border-white/5 rounded-full shadow-inner shadow-white/5">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#D76C82] shadow-[0_0_8px_rgba(215,108,130,0.8)] animate-pulse"></div>
+                <span className="text-[10px] text-[#9CA3AF] font-bold tracking-widest uppercase">Grok</span>
+                <span className="text-xs text-[#F5F5F7] font-mono ml-1">$18.30</span>
+              </div>
             </div>
             
             <div className="flex items-center gap-2 border-l border-white/10 pl-4 ml-2">

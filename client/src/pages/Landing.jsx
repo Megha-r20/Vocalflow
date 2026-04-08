@@ -72,9 +72,9 @@ export default function Landing() {
         <div className="relative max-w-5xl mx-auto px-4">
           <div className="absolute inset-0 bg-gradient-to-b from-[#B03052]/20 to-transparent rounded-[2.5rem] blur-3xl"></div>
           
-          <div className="relative bg-[#0B0B13]/80 backdrop-blur-2xl border border-[rgba(176,48,82,0.15)] rounded-[2.5rem] p-4 p-md-8 shadow-2xl overflow-hidden group hover:border-[rgba(176,48,82,0.3)] transition-all duration-500">
+          <div className="relative bg-white/[0.02] backdrop-blur-2xl border border-[rgba(176,48,82,0.1)] rounded-[2.5rem] p-4 md:p-8 shadow-2xl overflow-hidden group hover:border-[rgba(176,48,82,0.2)] transition-all duration-500">
             {/* Inner Dashboard-like Frame */}
-            <div className="aspect-[16/9] md:aspect-[21/9] bg-[#050508] rounded-[1.8rem] border border-[rgba(255,255,255,0.03)] flex items-center justify-center relative overflow-hidden">
+            <div className="aspect-[16/9] md:aspect-[21/9] bg-black/40 backdrop-blur-3xl rounded-[1.8rem] border border-white/5 flex items-center justify-center relative overflow-hidden">
               
               {/* Grid Background Overlay */}
               <div className="absolute inset-0 landing-grid-bg opacity-30 pointer-events-none"></div>
